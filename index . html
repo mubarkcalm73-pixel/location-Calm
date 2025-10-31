@@ -1,0 +1,26 @@
+!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقعي الشخصي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>مرحبًا بكم في موقعي الشخصي 🌟</h1>
+    <p>أنا مبارك، مطور مواقع شغوف بالإبداع والتقنية.</p>
+  </header>
+
+  <section id="about">
+    <h2>نبذة عني</h2>
+    <p>أحب تطوير الويب وتصميم المواقع الحديثة باستخدام HTML, CSS, و JavaScript.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Mubark | جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
