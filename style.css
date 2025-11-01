@@ -390,3 +390,55 @@ html {
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
+
+/* ========== تصميم متجاوب للجوال ========== */
+@media (max-width: 768px) {
+  header {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .logo-circle img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+  }
+
+  .site-sub {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 40px 10px;
+  }
+
+  .main-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  /* البطاقات */
+  .card {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  /* تعديل الفوتر والنصوص */
+  footer {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+}
