@@ -1,103 +1,67 @@
-/* --------------------------
-   تصميم موقع الهدوء
-   بواسطة Mubark Calm
-   -------------------------- */
-
-/* إعدادات عامة */
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Amiri', serif;
+/* الألوان الأساسية */
+:root {
+  --gold: #d4af37;
+  --black: #000000;
+  --gray: #f2f2f2;
 }
 
-/* الخلفية العامة */
+/* تنسيق عام */
 body {
-  background: linear-gradient(160deg, #1c1c1c, #2a2a2a);
-  color: #f1f1f1;
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  background: linear-gradient(180deg, var(--gray), #fff);
+  color: var(--black);
   text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-/* رأس الصفحة */
-header {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px 20px;
-  border-radius: 25px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  transition: all 0.3s ease;
+/* الرأس */
+.main-header {
+  padding: 60px 20px;
+  background-color: #111;
+  color: var(--gold);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
-header:hover {
-  box-shadow: 0 0 35px rgba(255, 215, 0, 0.5);
-  transform: scale(1.02);
-}
-
-/* صورة الشعار */
 .logo {
-  width: 90px;
-  height: 90px;
+  width: 150px;
   border-radius: 50%;
-  border: 2px solid gold;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  animation: glow 2s infinite alternate;
 }
 
-/* العنوان الرئيسي */
+/* النصوص */
 h1 {
-  font-size: 2.2rem;
-  color: gold;
-  margin-bottom: 15px;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  font-size: 2.5em;
+  margin: 10px 0;
 }
 
-/* الوصف */
 p {
-  font-size: 1.2rem;
-  color: #e0e0e0;
-  margin-bottom: 30px;
+  font-size: 1.2em;
+  color: var(--gray);
 }
 
-/* زر التواصل */
+/* الزر */
 .main-btn {
   display: inline-block;
-  padding: 12px 30px;
-  background: gold;
-  color: #1c1c1c;
+  margin-top: 20px;
+  background: var(--gold);
+  color: #111;
+  padding: 10px 25px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
 .main-btn:hover {
-  background: #ffef9f;
-  color: #000;
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+  background: #fff;
+  color: var(--gold);
+  box-shadow: 0 0 15px var(--gold);
 }
 
-/* تأثير ناعم عند التحميل */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-header, h1, p, .main-btn {
-  animation: fadeIn 1.2s ease forwards;
-}
-
-/* تذييل بسيط */
-footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #aaa;
+/* تأثير التوهج للشعار */
+@keyframes glow {
+  from { box-shadow: 0 0 10px var(--gold); }
+  to { box-shadow: 0 0 25px var(--gold), 0 0 50px var(--gold); }
 }
