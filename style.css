@@ -24,19 +24,32 @@ body {
   font-family: 'Cairo', sans-serif;
 }
 
+
 /* الشعار الدائري */
 .logo-circle {
   width: 180px;
   height: 180px;
-  border: 4px solid gold;
+  border: 4px solid var(--gold);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 20px;
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 25px var(--gold);
+  animation: glow 2s ease-in-out infinite alternate;
 }
+
+/* الوميض الذهبي */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px var(--gold);
+  }
+  100% {
+    box-shadow: 0 0 50px var(--gold-2), 0 0 100px var(--gold);
+  }
+}
+
 
 .logo-circle img {
   width: 100%;
