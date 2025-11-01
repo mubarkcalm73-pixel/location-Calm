@@ -8,7 +8,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>موقع الهدوء - Mubark Calm</title>
 </head>
-<body>
+
+<!-- ====== CONTACT ====== -->
+<section id="contact" class="section card">
+  <h2>تواصل معي</h2>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <p>هل عندك مشروع أو سؤال؟ تواصل معي عبر البريد الإلكتروني أو املأ النموذج وسأرد عليك قريباً.</p>
+
+      <form id="contact-form">
+        <label for="name">الاسم</label>
+        <input id="name" name="name" type="text" placeholder="اسمك" required>
+
+        <label for="email">البريد الإلكتروني</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="message">الرسالة</label>
+        <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك..." required></textarea>
+
+        <div class="contact-actions">
+          <button type="submit" class="main-btn">أرسل رسالة</button>
+          <a class="link-mail" href="mailto:YOUR_EMAIL_HERE">أو راسلني عبر البريد</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+  <body>
 <!-- ====== HEADER / HERO ====== -->
 <header>
   <div class="logo-circle">
