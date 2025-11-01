@@ -2,18 +2,101 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>موقع الهدوء - Mubark Calm</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ====== HEADER / HERO ====== -->
   <header class="main-header">
     <img src="logo.png" alt="شعار Mubark Calm" class="logo">
-    <h1>موقع الهدوء</h1>
-    <p>Mubark Calm – تصميم هادئ وأنيق بإبداع</p>
-    <a href="contact.html" class="main-btn">تواصل معي</a>
+    <h1 class="site-title">موقع الهدوء</h1>
+    <p class="site-sub">Mubark Calm — تصميم هادئ وأنيق بإبداع</p>
+    <a class="main-btn" href="#contact">تواصل معي</a>
   </header>
+
+  <!-- ====== ABOUT ====== -->
+  <section id="about" class="section card">
+    <h2>من أنا</h2>
+    <p class="lead">
+      أنا مبارك Calm — مطور ومصمم واجهات مواقع. أحب البساطة والاهتمام بالتفاصيل، أصمم واجهات سريعة ومتجاوبة مع خبرة في HTML, CSS و JavaScript.
+    </p>
+  </section>
+
+  <!-- ====== SKILLS ====== -->
+  <section id="skills" class="section">
+    <h2>المهارات</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <h3>HTML</h3>
+        <div class="bar"><span style="width:95%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>CSS (Responsive & Animations)</h3>
+        <div class="bar"><span style="width:92%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>JavaScript</h3>
+        <div class="bar"><span style="width:80%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>تصميم واجهات (UI)</h3>
+        <div class="bar"><span style="width:85%"></span></div>
+      </div>
+      <div class="skill">
+        <h3>تحسين الأداء (Performance)</h3>
+        <div class="bar"><span style="width:70%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+  <section id="projects" class="section card">
+    <h2>المشاريع</h2>
+    <p class="lead">قريباً سأعرض هنا أمثلة من أعمالي. حالياً يمكنك رؤية بعض النماذج على ملفاتي أو التواصل لطلب عرض أعمال.</p>
+    <div class="projects-grid">
+      <!-- مثال مشروع (استبدله بروابط/صور حقيقية لاحقاً) -->
+      <article class="project">
+        <div class="project-thumb">موقع شخصي احترافي</div>
+        <h4>موقع شخصي احترافي</h4>
+        <p>واجهة شخصية، صفحة مشاريع، ونموذج تواصل.</p>
+      </article>
+      <article class="project">
+        <div class="project-thumb">واجهة متجر إلكتروني</div>
+        <h4>واجهة متجر إلكتروني</h4>
+        <p>تصميم صفحة منتجات وتجربة دفع مبسطة.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact" class="section card">
+    <h2>تواصل معي</h2>
+    <p class="lead">أرسل لي رسالة وسأرد عليك عبر البريد الإلكتروني.</p>
+
+    <!-- form: نستخدم هنا mailto كحل بسيط من غير سيرفر -->
+    <form id="contactForm">
+      <label>الاسم</label>
+      <input type="text" id="name" placeholder="اسمك" required>
+
+      <label>بريدك الإلكتروني</label>
+      <input type="email" id="email" placeholder="your@mail.com" required>
+
+      <label>الرسالة</label>
+      <textarea id="message" placeholder="اكتب رسالتك..." rows="5" required></textarea>
+
+      <button type="submit" class="main-btn">إرسال</button>
+      <p id="formMsg" class="muted"></p>
+    </form>
+
+    <p class="muted">أو راسلني مباشرة عبر البريد: <strong><a href="mailto: MubarkCalm73@gmail.com" id="myEmail">MubarkCalm73@gmail.com</a></strong></p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Mubark Calm — جميع الحقوق محفوظة.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
