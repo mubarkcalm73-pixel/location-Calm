@@ -207,3 +207,13 @@ textarea{min-height:120px}
   transform: scale(1.05);
   box-shadow: 0 0 30px #ffdf40;
 }
+
+/* الوميض الذهبي */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px var(--gold);
+  }
+  100% {
+    box-shadow: 0 0 50px var(--gold-2);
+  }
+}
