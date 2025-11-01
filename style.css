@@ -442,3 +442,48 @@ html {
     font-size: 0.9rem;
   }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo-circle {
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
+    border-width: 3px;
+    box-shadow: 0 0 15px var(--gold);
+  }
+
+  h1, h2, h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  button, .cta, .btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 10px;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
