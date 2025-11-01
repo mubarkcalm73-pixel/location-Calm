@@ -1,20 +1,103 @@
-!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقع الهدوء - Mubark Calm</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* --------------------------
+   تصميم موقع الهدوء
+   بواسطة Mubark Calm
+   -------------------------- */
 
-  <header class="main-header">
-    <img src="logo.png" alt="شعار Mubark Calm" class="logo">
-    <h1>موقع الهدوء</h1>
-    <p>Mubark Calm — تصميم هادئ وأنيق بإبداع</p>
-    <a href="contact.html" class="main-btn">تواصل معي</a>
-  </header>
+/* إعدادات عامة */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
-  <script src="script.js"></script>
-</body>
-</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Amiri', serif;
+}
+
+/* الخلفية العامة */
+body {
+  background: linear-gradient(160deg, #1c1c1c, #2a2a2a);
+  color: #f1f1f1;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* رأس الصفحة */
+header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.5);
+  transform: scale(1.02);
+}
+
+/* صورة الشعار */
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid gold;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* العنوان الرئيسي */
+h1 {
+  font-size: 2.2rem;
+  color: gold;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* الوصف */
+p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+/* زر التواصل */
+.main-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: gold;
+  color: #1c1c1c;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.main-btn:hover {
+  background: #ffef9f;
+  color: #000;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+}
+
+/* تأثير ناعم عند التحميل */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header, h1, p, .main-btn {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* تذييل بسيط */
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
