@@ -1,0 +1,122 @@
+
+/* إعداد عام */
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: radial-gradient(circle at top, #111, #000);
+  color: #FFD700;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* الإضاءة الذهبية */
+body:hover {
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+}
+
+/* الرأس */
+header {
+  background: #000;
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 2px solid #FFD700;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+nav a {
+  color: #FFD700;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #fff;
+}
+
+/* الأقسام */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* الشبكة */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 30px;
+}
+
+/* البطاقات */
+.card {
+  background: #111;
+  border: 1px solid #FFD70044;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px #FFD70022;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #FFD70055;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* النموذج */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, textarea, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-family: 'Tajawal', sans-serif;
+}
+input, textarea {
+  background: #222;
+  color: #FFD700;
+}
+button {
+  background: #FFD700;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #fff;
+}
+
+/* الفوتر */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  border-top: 2px solid #FFD700;
+  font-size: 0.9em;
+}
+
+/* تحسين الهواتف */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.3em;
+  }
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+  .section {
+    padding: 40px 10px;
+  }
+}
