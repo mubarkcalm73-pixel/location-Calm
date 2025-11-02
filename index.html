@@ -269,6 +269,15 @@ body.light-mode button {
     display: block;
   }
 }
+  script>
+  // 🌙 التبديل بين الوضع الليلي والفاتح
+  const btn = document.getElementById('themeBtn');
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    btn.textContent = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
+  });
+</script>
+
 </body>
 </html>
 
