@@ -255,4 +255,52 @@ button:hover {
   background: #ffce00;
   box-shadow: 0 0 20px gold;
 }
+  /* 🌙 زر تبديل الوضع */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+#themeBtn {
+  background: gold;
+  color: black;
+  border: none;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#themeBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px gold;
+}
+
+/* ☀️ الوضع الفاتح */
+.light-mode {
+  background: #f8f8f8;
+  color: #222;
+}
+
+.light-mode header,
+.light-mode footer {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.light-mode .card,
+.light-mode .service,
+.light-mode .project {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.light-mode button {
+  background: #222;
+  color: gold;
+}
   
