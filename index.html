@@ -77,7 +77,27 @@
   </footer>
 
   <!-- ملف الجافاسكربت -->
-  <script src="script.js"></script>
+ <script src="script.js"></script>
+  
+<script>
+  // 🔥 تأثير ظهور العناصر أثناء التمرير
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+  window.addEventListener("scroll", reveal);
+  reveal(); // لتفعيلها عند التحميل
+</script>
+  
 </body>
 </html>
 
