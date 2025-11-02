@@ -302,5 +302,25 @@ button:hover {
 .light-mode button {
   background: #222;
   color: gold;
+}  
+/* 📱 تحسين المظهر في الجوال */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  .card, .service, .project {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #themeBtn {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
 }
   
