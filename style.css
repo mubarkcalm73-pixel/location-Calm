@@ -219,4 +219,41 @@ body::before {
     font-size: 0.95em;
   }
 }
+
+/* ✨ تأثيرات الحركة والإضاءة ✨ */
+section, .card, .service, .project, form, input, textarea, button {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover, .service:hover, .project:hover {
+  box-shadow: 0 0 25px gold;
+  transform: translateY(-5px);
+}
+
+/* تأثير دخول الأقسام عند التمرير */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* تحسين شكل الأزرار */
+button {
+  background: gold;
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background: #ffce00;
+  box-shadow: 0 0 20px gold;
+}
   
