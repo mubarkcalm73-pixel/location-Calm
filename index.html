@@ -1,80 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الشخصي - Mubark Calm</title>
+  <title>موقعي الاحترافي - Mubark Calm</title>
 
-  <!-- الخط الجميل من Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- الخط -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- استدعاء ملف التنسيق -->
+  <!-- التنسيقات -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- شريط علوي -->
   <header>
-    <h1>مرحبا بك في موقعي</h1>
-    <nav>
+    <div class="logo">⚡ Mubark Calm</div>
+    <nav id="nav">
       <a href="#about">من أنا</a>
       <a href="#services">الخدمات</a>
       <a href="#projects">المشاريع</a>
       <a href="#contact">اتصل بي</a>
     </nav>
+    <button id="menu-btn">☰</button>
+    <button id="theme-toggle">💡</button>
   </header>
 
-  <!-- قسم التعريف -->
-  <section id="about" class="section">
+  <section id="about" class="section fade-in">
     <h2>من أنا</h2>
-    <p>أنا مصمم ومطور مواقع مهتم بالإبداع والابتكار، أعمل على إنشاء تصاميم أنيقة وتجارب استخدام مريحة على كل الأجهزة.</p>
+    <p>مصمم ومطور مواقع متخصص في الواجهات الاحترافية والتجربة الفريدة. أعمل على جعل الأفكار تتحول إلى تصاميم مذهلة تبهِر المستخدم.</p>
   </section>
 
-  <!-- قسم الخدمات -->
-  <section id="services" class="section">
+  <section id="services" class="section fade-in">
     <h2>خدماتي</h2>
     <div class="grid">
       <div class="card">
-        <h3>تصميم المواقع</h3>
-        <p>تصميم واجهات أنيقة وسريعة باستخدام HTML وCSS.</p>
+        <h3>تصميم واجهات</h3>
+        <p>تصميم عصري وجذاب يناسب جميع الشاشات.</p>
       </div>
       <div class="card">
-        <h3>تطوير JavaScript</h3>
-        <p>إضافة تفاعلات وحركات جميلة للموقع.</p>
+        <h3>تطوير تفاعلي</h3>
+        <p>أضيف الحياة لموقعك باستخدام JavaScript.</p>
       </div>
       <div class="card">
-        <h3>تحسين الأداء</h3>
-        <p>تسريع الموقع وجعله مناسب لجميع الشاشات.</p>
-      </div>
-      <div class="card">
-        <h3>تحسين SEO</h3>
-        <p>تحسين ظهور موقعك في نتائج البحث.</p>
+        <h3>تحسين السرعة</h3>
+        <p>أجعل موقعك سريعًا ومتجاوبًا على كل الأجهزة.</p>
       </div>
     </div>
   </section>
 
-  <!-- قسم المشاريع -->
-  <section id="projects" class="section">
+  <section id="projects" class="section fade-in">
     <h2>مشاريعي</h2>
     <div class="grid">
-      <div class="card">
-        <img src="images/project1.jpg" alt="مشروع 1">
-        <p>موقع شخصي متكامل بتصميم ذهبي وأسود.</p>
+      <div class="card project">
+        <img src="images/project1.jpg" alt="">
+        <p>موقع شخصي متجاوب بالكامل.</p>
       </div>
-      <div class="card">
-        <img src="images/project2.jpg" alt="مشروع 2">
-        <p>متجر إلكتروني متجاوب بالكامل.</p>
+      <div class="card project">
+        <img src="images/project2.jpg" alt="">
+        <p>لوحة تحكم ذكية بتصميم ذهبي.</p>
       </div>
     </div>
   </section>
 
-  <!-- قسم التواصل -->
-  <section id="contact" class="section">
+  <section id="contact" class="section fade-in">
     <h2>اتصل بي</h2>
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="الاسم الكامل" required>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-      <input type="text" name="subject" placeholder="الموضوع">
-      <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+    <form>
+      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="email" placeholder="البريد الإلكتروني" required>
+      <textarea placeholder="اكتب رسالتك..." required></textarea>
       <button type="submit">إرسال</button>
     </form>
   </section>
@@ -82,241 +75,180 @@
   <footer>
     <p>© 2025 Mubark Calm | جميع الحقوق محفوظة</p>
   </footer>
+
+  <!-- ملف الجافاسكربت -->
+  <script src="script.js"></script>
 </body>
 </html>
 
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الشخصي - Mubark Calm</title>
 
-  <!-- الخط الجميل من Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+---
 
-  <!-- استدعاء ملف التنسيق -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- شريط علوي -->
-  <header>
-    <h1>مرحبا بك في موقعي</h1>
-    <nav>
-      <a href="#about">من أنا</a>
-      <a href="#services">الخدمات</a>
-      <a href="#projects">المشاريع</a>
-      <a href="#contact">اتصل بي</a>
-    </nav>
-  </header>
+🎨 ملف style.css
 
-  <!-- قسم التعريف -->
-  <section id="about" class="section">
-    <h2>من أنا</h2>
-    <p>أنا مصمم ومطور مواقع مهتم بالإبداع والابتكار، أعمل على إنشاء تصاميم أنيقة وتجارب استخدام مريحة على كل الأجهزة.</p>
-  </section>
+:root {
+  --gold: #FFD700;
+  --dark: #000;
+  --light: #111;
+}
 
-  <!-- قسم الخدمات -->
-  <section id="services" class="section">
-    <h2>خدماتي</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>تصميم المواقع</h3>
-        <p>تصميم واجهات أنيقة وسريعة باستخدام HTML وCSS.</p>
-      </div>
-      <div class="card">
-        <h3>تطوير JavaScript</h3>
-        <p>إضافة تفاعلات وحركات جميلة للموقع.</p>
-      </div>
-      <div class="card">
-        <h3>تحسين الأداء</h3>
-        <p>تسريع الموقع وجعله مناسب لجميع الشاشات.</p>
-      </div>
-      <div class="card">
-        <h3>تحسين SEO</h3>
-        <p>تحسين ظهور موقعك في نتائج البحث.</p>
-      </div>
-    </div>
-  </section>
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: radial-gradient(circle, var(--light), var(--dark));
+  color: var(--gold);
+  margin: 0;
+  line-height: 1.7;
+  transition: 0.5s;
+}
 
-  <!-- قسم المشاريع -->
-  <section id="projects" class="section">
-    <h2>مشاريعي</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="images/project1.jpg" alt="مشروع 1">
-        <p>موقع شخصي متكامل بتصميم ذهبي وأسود.</p>
-      </div>
-      <div class="card">
-        <img src="images/project2.jpg" alt="مشروع 2">
-        <p>متجر إلكتروني متجاوب بالكامل.</p>
-      </div>
-    </div>
-  </section>
+header {
+  background: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  <!-- قسم التواصل -->
-  <section id="contact" class="section">
-    <h2>اتصل بي</h2>
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="الاسم الكامل" required>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-      <input type="text" name="subject" placeholder="الموضوع">
-      <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
-      <button type="submit">إرسال</button>
-    </form>
-  </section>
+.logo {
+  font-weight: bold;
+  color: var(--gold);
+}
 
-  <footer>
+nav {
+  display: flex;
+  gap: 15px;
+}
+nav a {
+  text-decoration: none;
+  color: var(--gold);
+  font-weight: bold;
+}
+nav a:hover {
+  color: white;
+}
 
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mubark, Calm — موقع الهدوء</title>
+/* أزرار */
+#menu-btn, #theme-toggle {
+  display: none;
+  background: none;
+  color: var(--gold);
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+}
 
-  <!-- رابط ملف الـ CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- خط عربي جيد (اختياري) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- ناف بار -->
-  <nav class="navbar">
-    <div class="logo"> &lt;/&gt; <span class="logo-name">Mubark, Calm</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">الرئيسية</a></li>
-      <li><a href="#about">عنّي</a></li>
-      <li><a href="#skills">المهارات</a></li>
-      <li><a href="#projects">مشاريعي</a></li>
-      <li><a href="#contact">تواصل</a></li>
-    </ul>
-  </nav>
+/* أقسام */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+h2 {
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+p {
+  color: #ccc;
+}
 
-  <!-- HERO / HEADER -->
-  <header id="home" class="main-header">
-    <div class="logo-circle" aria-hidden="true">
-      <img src="https://raw.githubusercontent.com/mubarkcalm73-pixel/location-Calm/refs/heads/main/SAVE_20251101_142839.jpg" alt="Mubark Calm logo">
-    </div>
+/* بطاقات */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 30px;
+}
+.card {
+  background: #111;
+  border: 1px solid #FFD70055;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px #FFD70033;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #FFD70066;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-    <h1 class="site-title">Mubark, Calm</h1>
-    <p class="site-sub">مطور ومصمم واجهات — HTML • CSS • JavaScript</p>
+/* النموذج */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, textarea, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: var(--gold);
+}
+button {
+  background: var(--gold);
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+button:hover {
+  background: white;
+}
 
-    <div class="hero-cta">
-      <a href="#contact" class="btn main-btn">تواصل معي</a>
-      <a href="#projects" class="btn ghost-btn">مشاريعي</a>
-    </div>
-  </header>
+/* تأثير الظهور */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  <!-- ABOUT -->
-  <section id="about" class="section about-section">
-    <div class="container about-content">
-      <div class="about-img">
-        <img src="https://raw.githubusercontent.com/mubarkcalm73-pixel/location-Calm/refs/heads/main/SAVE_20251101_142839.jpg" alt="Mubark image">
-      </div>
-      <div class="about-text">
-        <h2 class="section-title">عنّي</h2>
-        <p class="lead">
-          أنا Mubark, Calm — أعمل على تصميم واجهات ومواقع متوافقة مع الجوال.
-          أحب اللون الأسود والذهبي، وأهتم بالتفاصيل والسرعة وتجربة المستخدم.
-        </p>
-        <p class="lead muted">خبرة في HTML، CSS (Responsive)، وJavaScript البسيط.</p>
-      </div>
-    </div>
-  </section>
+/* الوضع الليلي */
+body.light-mode {
+  background: white;
+  color: black;
+}
+body.light-mode header {
+  background: #f0f0f0;
+  border-color: #222;
+}
+body.light-mode nav a {
+  color: #000;
+}
+body.light-mode button {
+  background: black;
+  color: white;
+}
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title">المهارات</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <h3>HTML</h3>
-          <div class="bar"><span style="width:95%"></span></div>
-        </div>
-        <div class="skill">
-          <h3>CSS / Responsive</h3>
-          <div class="bar"><span style="width:90%"></span></div>
-        </div>
-        <div class="skill">
-          <h3>JavaScript (أساسيات)</h3>
-          <div class="bar"><span style="width:70%"></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">المشاريع</h2>
-      <div class="projects-grid">
-        <article class="project card">
-          <div class="project-thumb">
-            <img src="https://via.placeholder.com/400x200/111111/ffd700?text=Project+1" alt="مشروع 1">
-          </div>
-          <h3>موقع تعريفي</h3>
-          <p class="muted">واجهة شخصية متجاوبة باللون الأسود والذهبي.</p>
-        </article>
-
-        <article class="project card">
-          <div class="project-thumb">
-            <img src="https://via.placeholder.com/400x200/111111/ffd700?text=Project+2" alt="مشروع 2">
-          </div>
-          <h3>تصميم شعار</h3>
-          <p class="muted">شعار دائري متحرك مع تأثير توهج ذهبي.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-card card contact-section">
-    <div class="container">
-      <h2 class="section-title">تواصل معي</h2>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <p class="muted">أرسل لي رسالة أو استفسار وسأرد عليك بأسرع وقت.</p>
-          <p><strong>البريد:</strong> <a class="link-mail" href="mailto:hello@example.com">hello@example.com</a></p>
-        </div>
-
-        <form id="contact-form" class="contact-card" action="#" method="post" onsubmit="alert('شكراً! (هذا نموذج تجريبي)'); return false;">
-          <label for="name">الاسم</label>
-          <input id="name" type="text" name="name" placeholder="اسمك" required>
-
-          <label for="email">البريد</label>
-          <input id="email" type="email" name="email" placeholder="name@example.com" required>
-
-          <label for="message">الرسالة</label>
-          <textarea id="message" name="message" rows="6" placeholder="اكتب رسالتك..." required></textarea>
-
-          <div class="contact-actions">
-            <button type="submit" class="btn main-btn">إرسال</button>
-            <a href="#projects" class="btn ghost-btn">عرض المشاريع</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© <strong>Mubark, Calm</strong> — كل الحقوق محفوظة.</p>
-    </div>
-  </footer>
-
-  <!-- (اختياري) سكربت صغير لتمرير سلس -->
-  <script>
-    document.querySelectorAll('.nav-links a, .hero-cta a, .link-mail').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+/* الهواتف */
+@media (max-width: 700px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+  nav.show {
+    display: flex;
+  }
+  #menu-btn, #theme-toggle {
+    display: block;
+  }
+}
