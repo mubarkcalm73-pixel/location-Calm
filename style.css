@@ -207,4 +207,16 @@ body::before {
   0% { transform: scale(1); opacity: 0.3; }
   100% { transform: scale(1.2); opacity: 0.5; }
 }
+
+@media (max-width: 600px) {
+  .section {
+    padding: 40px 15px;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  p {
+    font-size: 0.95em;
+  }
+}
   
