@@ -1,34 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحة الانتظار - إعلانات ممولة</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تم الإرسال — Mubark/Calm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header>
-    <h1>إعلانات ممولة</h1>
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="client.html">العميل</a>
-      <a href="waiting.html" class="active">انتظار</a>
-    </nav>
-    <button id="mode-toggle">🌙</button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-logo">MC</div>
+        <div class="brand-name"><span class="ar">مبارك كالم</span><span class="en">Mubark/Calm</span></div>
+      </a>
+    </div>
   </header>
 
-  <main class="waiting-section">
-    <h2>تم استلام طلبك ✅</h2>
-    <p>يرجى الانتظار حتى يتم الرد من الإدارة خلال وقت قصير.  
-    شكرًا لثقتك بخدماتنا 💬</p>
+  <main class="container waiting-page">
+    <div class="waiting-card">
+      <div class="spinner" aria-hidden="true"></div>
+      <h1>تم استلام طلبك</h1>
+      <p class="muted">سنعاود التواصل عبر البريد أو الواتساب</p>
+      <div id="orderSummary" class="summary"></div>
+      <a class="btn ghost" href="index.html">العودة للرئيسية</a>
+    </div>
   </main>
 
-  <footer>
-    <p>© جميع الحقوق محفوظة Mubark Calm7</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-foot">Mubark/Calm</div>
+        <div class="small">© <span id="year3"></span></div>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:MubarkCalm73@gmail.com">📧</a>
+        <a href="https://wa.me/25377053644">📱</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
