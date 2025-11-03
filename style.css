@@ -294,6 +294,57 @@ form {
     margin: auto;
     gap: 1rem;
 }
+/* في ملف style.css - تطوير محددات form */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* زيادة العرض قليلاً */
+    margin: auto;
+    gap: 1.2rem; /* زيادة التباعد بين العناصر */
+}
+
+/* تنسيق عام لحقول الإدخال والنص */
+.input-field {
+    padding: 15px; /* زيادة حجم الـ padding */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حدود خفيفة */
+    border-radius: 8px;
+    background: #1e1e1e; /* خلفية أغمق قليلاً من الخلفية العامة */
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+/*Placeholder text color*/
+.input-field::placeholder {
+    color: #aaa;
+}
+
+/* تأثير التركيز (Focus Effect) */
+.input-field:focus {
+    outline: none;
+    border-color: var(--main-color); /* حدود بلون الثيم عند التركيز */
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+/* تنسيق زر الإرسال */
+.cta-submit {
+    padding: 12px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cta-submit:hover {
+    background: #fff;
+    color: var(--main-color);
+    transform: translateY(-2px);
+}
 
 input, textarea, button {
     padding: 10px;
