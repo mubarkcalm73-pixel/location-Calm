@@ -4,7 +4,11 @@
     --text-color: #fff;
     --card-bg: rgba(255, 255, 255, 0.1);
 }
-
+body {
+    /* تم التأكيد: استخدام الخط الذي تم ربطه */
+    font-family: "Cairo", sans-serif; 
+    /* ... باقي الخصائص ... */
+}
 /* التنسيق العام */
 body {
     margin: 0;
