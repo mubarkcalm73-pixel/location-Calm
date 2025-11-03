@@ -339,4 +339,54 @@ section {
     padding: 80px 40px;
     /* ... */
 }
+/* تأثير وميض المؤشر (Blinking Cursor Effect) */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typed-text {
+    /* جعل المؤشر يظهر كخط رأسي */
+    border-right: 2px solid white; 
+    /* تطبيق الوميض */
+    animation: blink 0.75s step-end infinite; 
+    font-weight: bold;
+}
+/* ... باقي الكود ... */
+
+.home h2 {
+    font-size: 5rem; /* الخط الجديد */
+    margin-bottom: 0.5rem; 
+}
+
+.home p {
+    max-width: 700px; /* العرض الجديد */
+    font-size: 1.5rem; /* الخط الجديد */
+    opacity: 0.8;
+}
+
+.cta {
+    margin-top: 1.5rem; /* زيادة المسافة العلوية */
+    background: var(--main-color);
+    color: white;
+    padding: 12px 30px; /* الحجم الجديد */
+    border-radius: 50px; /* الشكل الجديد */
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* **الكود الجديد لتأثير الكتابة** */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typed-text {
+    border-right: 2px solid white;
+    animation: blink 0.75s step-end infinite;
+    font-weight: bold;
+}
+
+/* ... باقي الكود ... */
 
