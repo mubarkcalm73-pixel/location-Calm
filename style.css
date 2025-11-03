@@ -261,7 +261,7 @@ body {
   padding: 0;
   background: 
     linear-gradient(rgba(255, 255, 255, 0.85), rgba(https://pin.it/73tecAfm4)),
-    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+    url(https://pin.it/6GXP2v25g)P2orrepeatrepeato-repeat center center fixed;
   background-size: cover;
   color: #222;
   transition: background 0.5s ease, color 0.5s ease;
@@ -270,8 +270,8 @@ body {
 /* الوضع الليلي */
 body.dark {
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(https://pin.it/73tecAfm4)),
-    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(https://pin.it/6GXP2v25g ) no-repeat center center fixed;
   background-size: cover;
   color: #fff;
 }
