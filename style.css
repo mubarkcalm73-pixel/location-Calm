@@ -1,9 +1,10 @@
+/* الخط العام */
 body {
   margin: 0;
   font-family: 'Tajawal', sans-serif;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #222;
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* الوضع الليلي */
@@ -12,105 +13,244 @@ body.dark {
   color: #eee;
 }
 
+/* ------------------ */
+/* شريط التنقل */
 header {
   background-color: #ff4b4b;
   color: white;
-  padding: 15px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
 }
 
 header h1 {
   font-size: 24px;
+  margin: 0;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
+  margin: 0 10px;
+  transition: opacity 0.3s;
 }
 
+nav a:hover,
 nav a.active {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 #mode-toggle {
   background: white;
+  color: #ff4b4b;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
+  border-radius: 8px;
+  padding: 6px 10px;
   cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
 }
 
+#mode-toggle:hover {
+  background-color: #ffeaea;
+}
+
+/* ------------------ */
+/* قسم المقدمة */
 .hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #fff 0%, #ffeaea 100%);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero h2 {
+  font-size: 32px;
+  color: #222;
+}
+
+.hero h2 span {
+  color: #ff4b4b;
+}
+
+.hero p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+  margin: 10px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.main-btn {
+  background-color: #ff4b4b;
+  color: white;
+}
+
+.main-btn:hover {
+  background-color: #ff6666;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: #ff4b4b;
+  border: 2px solid #ff4b4b;
+}
+
+.secondary-btn:hover {
+  background-color: #ff4b4b;
+  color: white;
+}
+
+/* ------------------ */
+/* قسم الخدمات */
+.services {
   text-align: center;
   padding: 60px 20px;
 }
 
-.hero .btn {
-  background-color: #ff4b4b;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
+.services h2 {
+  color: #ff4b4b;
+  margin-bottom: 40px;
 }
 
-.hero .btn:hover {
-  background-color: #ff6666;
-}
-
-.client-section {
-  padding: 40px 20px;
-  max-width: 600px;
+.service-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
   margin: auto;
 }
 
-.client-form input,
-.client-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.client-form .btn {
-  width: 100%;
-}
-
-.contact-info {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.contact-info .buttons {
-  margin-top: 15px;
-}
-
-.contact-info .btn {
-  display: inline-block;
-  margin: 5px;
-  background-color: #ff4b4b;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
+.service {
+  background-color: #fff6f6;
+  padding: 25px;
+  border-radius: 16px;
   transition: 0.3s;
 }
 
-.contact-info .btn:hover {
-  background-color: #ff6666;
+.service:hover {
+  background-color: #ffe1e1;
+  transform: translateY(-5px);
 }
 
-footer {
+.service i {
+  font-size: 36px;
+  color: #ff4b4b;
+  margin-bottom: 15px;
+}
+
+.service h3 {
+  color: #222;
+}
+
+.service p {
+  color: #555;
+}
+
+/* ------------------ */
+/* قسم لماذا نحن */
+.why-us {
+  padding: 60px 20px;
   text-align: center;
-  padding: 20px;
+  background: #fafafa;
+}
+
+.why-us h2 {
+  color: #ff4b4b;
+  margin-bottom: 20px;
+}
+
+.why-us ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+  text-align: right;
+}
+
+.why-us li {
+  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #eee;
+}
+
+.why-us li i {
+  color: #ff4b4b;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* ------------------ */
+/* قسم التواصل السريع */
+.contact-now {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-now h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.btn.big {
+  padding: 15px 40px;
+  font-size: 18px;
+}
+
+/* ------------------ */
+/* الفوتر */
+footer {
   background-color: #ff4b4b;
   color: white;
-  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-weight: 600;
+}
+
+/* ------------------ */
+/* الوضع الليلي */
+body.dark header {
+  background-color: #1f1f1f;
+}
+
+body.dark .hero {
+  background: linear-gradient(to bottom, #1f1f1f, #292929);
+}
+
+body.dark .service {
+  background-color: #1f1f1f;
+}
+
+body.dark .service:hover {
+  background-color: #333;
+}
+
+body.dark .why-us {
+  background-color: #1a1a1a;
+}
+
+body.dark footer {
+  background-color: #1f1f1f;
 }
