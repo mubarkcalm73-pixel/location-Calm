@@ -1,58 +1,144 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <!-- خلفية الأكواد -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تصميم مواقع - Mubark Calm7</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مُبارك كالم — مصمم مواقع</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="topbar">
     <div class="container">
-      <h1 class="logo">Mubark Calm7</h1>
-      <nav>
-        <a href="#">الرئيسية</a>
-        <a href="#">أعمالنا</a>
-        <a href="#">تواصل معنا</a>
-        <button id="mode-toggle">🌙</button>
+      <a class="brand" href="#">مُبارك كالم</a>
+      <nav class="nav">
+        <a href="#home">الرئيسية</a>
+        <a href="#client">العميل</a>
+        <a href="#blog">المدونة</a>
+        <button id="themeToggle" aria-label="تبديل الوضع">🌙/☀️</button>
       </nav>
     </div>
   </header>
 
-  <!-- المقدمة -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>مرحباً بك في موقع <span>تصميم المواقع</span></h2>
-      <p>نحن نساعدك في إنشاء موقع احترافي وجذاب يعبّر عن هويتك ويحقق أهدافك بخبرة وإتقان.</p>
-      <div class="buttons">
-        <a href="#" class="btn primary">ابدأ الآن</a>
-        <a href="#" class="btn secondary">تعرف أكثر</a>
+  <main>
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <h1>تصميم مواقع احترافي 💡🚀</h1>
+          <p class="lead">نحو حضور إلكتروني قوي — تصميم متجاوب، أداء سريع، وهوية رقمية مميّزة.</p>
+          <ul class="features">
+            <li>هوية مفصّلة وقوية (بطاقة تعريف متقدمة)</li>
+            <li>توافق جوال وكمبيوتر</li>
+            <li>خانات مميزة ومتطورة</li>
+          </ul>
+          <div class="cta">
+            <a class="btn primary" href="#client">أطلب تصميم</a>
+            <a class="btn ghost" href="#blog">اطّلع على المدونة</a>
+          </div>
+        </div>
+
+        <aside class="id-card">
+          <div class="id-top">
+            <div class="logo">MC</div>
+            <div class="id-title">مُبارك كالم</div>
+          </div>
+          <div class="id-body">
+            <p><strong>المهنة:</strong> مصمم مواقع احترافي</p>
+            <p><strong>التخصص:</strong> تصميم واجهات، هوية رقمية، متاجر إلكترونية</p>
+            <p><strong>البريد:</strong> <a href="mailto:MubarkCalm73@gmail.com">📧 MubarkCalm73@gmail.com</a></p>
+            <p><strong>الهاتف:</strong> <a href="tel:+25377053644">📱 +253 77053644 (واتس متاح)</a></p>
+          </div>
+          <div class="id-footer">هوية رقمية قوية — جاهزة للعرض</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- صفحة العميل -->
+    <section id="client" class="client container">
+      <h2>صفحة العميل — أرسل طلبك</h2>
+      <p class="muted">املأ النموذج أدناه وسنبدأ بالتواصل. بعد الإرسال ستنتقل لصفحة الإنتظار.</p>
+
+      <form id="clientForm" class="form-grid" autocomplete="off">
+        <label>الاسم الكامل
+          <input required name="name" type="text" placeholder="مثال: محمد علي">
+        </label>
+
+        <label>البريد الإلكتروني
+          <input required name="email" type="email" placeholder="you@example.com">
+        </label>
+
+        <label>رقم الهاتف
+          <input required name="phone" type="tel" placeholder="+253 ...">
+        </label>
+
+        <label class="full">نوع المشروع
+          <select name="type">
+            <option>موقع شخصي</option>
+            <option>متجر إلكتروني</option>
+            <option>صفحة هبوط</option>
+            <option>هوية رقمية كاملة</option>
+          </select>
+        </label>
+
+        <label class="full">وصف المطلب
+          <textarea name="desc" rows="5" placeholder="أخبرنا بما تحتاجه... 💡🚀"></textarea>
+        </label>
+
+        <div class="form-actions full">
+          <button type="submit" class="btn primary">أرسل الطلب</button>
+          <button type="reset" class="btn ghost">إعادة</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- صفحة الانتظار (مخفية افتراضياً) -->
+    <section id="waiting" class="waiting container hidden">
+      <h2>شكرًا! طلبك قيد المعالجة ⏳</h2>
+      <p>تم استلام بياناتك. سنراجع الطلب ونتواصل عبر البريد أو الواتس آب في أقرب وقت.</p>
+      <div class="waiting-card">
+        <div class="spinner" aria-hidden></div>
+        <p>حالة الطلب: قيد المراجعة</p>
+        <a id="backToHome" class="btn ghost" href="#home">العودة للرئيسية</a>
+      </div>
+    </section>
+
+    <!-- المدونة -->
+    <section id="blog" class="blog container">
+      <h2>المدونة الاحترافية</h2>
+      <div class="posts">
+        <article class="post">
+          <h3>نصائح لتسريع موقعك</h3>
+          <p class="meta">💡 5 دقائق للقراءة — 12 أغسطس 2025</p>
+          <p>تعرف على طرق بسيطة لتقليل زمن تحميل الصفحة وتحسين تجربة الزوار.</p>
+          <a class="readmore" href="#">اقرأ المزيد →</a>
+        </article>
+
+        <article class="post">
+          <h3>كيف تختار ألوان العلامة التجارية</h3>
+          <p class="meta">🎨 7 دقائق — 3 سبتمبر 2025</p>
+          <p>الألوان الصفراء والحمراء قوية لجذب الانتباه — لكن يجب استخدامها بحذر.</p>
+          <a class="readmore" href="#">اقرأ المزيد →</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>مُبارك كالم</strong>
+        <p>مصمم مواقع — هوية رقمية — واجهات احترافية</p>
+      </div>
+      <div>
+        <p>📧 <a href="mailto:MubarkCalm73@gmail.com">MubarkCalm73@gmail.com</a></p>
+        <p>📱 <a href="tel:+25377053644">+253 77053644</a></p>
       </div>
     </div>
-  </section>
-
-  <!-- قسم الخدمات -->
-  <section class="services">
-    <h2>خدماتنا</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>تصميم واجهات المواقع</h3>
-        <p>نصمم واجهات حديثة وسريعة الاستجابة تعمل على كل الأجهزة.</p>
-      </div>
-      <div class="card">
-        <h3>تطوير المواقع</h3>
-        <p>نستخدم أحدث التقنيات لبناء مواقع تفاعلية وسريعة الأداء.</p>
-      </div>
-      <div class="card">
-        <h3>تحسين محركات البحث (SEO)</h3>
-        <p>نساعدك على الظهور في نتائج البحث الأولى وزيادة الزيارات.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© جميع الحقوق محفوظة Mubark Calm7</p>
   </footer>
 
   <script src="script.js"></script>
