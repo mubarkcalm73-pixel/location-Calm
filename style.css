@@ -4,12 +4,10 @@
     --text-color: #fff;
     --card-bg: rgba(255, 255, 255, 0.1);
 }
-body {
-    /* تم التأكيد: استخدام الخط الذي تم ربطه */
-    font-family: "Cairo", sans-serif; 
-    /* ... باقي الخصائص ... */
-}
-/* التنسيق العام */
+
+/* =================================== */
+/* 1. التنسيق العام و Header */
+/* =================================== */
 body {
     margin: 0;
     font-family: "Cairo", sans-serif;
@@ -18,7 +16,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* رأس الصفحة */
 header {
     position: fixed;
     width: 100%;
@@ -30,63 +27,13 @@ header {
     align-items: center;
     padding: 10px 40px;
 }
-/* ... (داخل header) ... */
-
-/* زر القائمة - يظهر فقط على الجوال */
-#menu-toggle {
-    display: none; /* يتم إخفاؤه افتراضياً */
-    background: none;
-    border: none;
-    color: var(--main-color);
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-/* نمط القائمة على الجوال (Mobile Navigation) */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 20px;
-    }
-
-    #menu-toggle {
-        display: block; /* يظهر الزر في الشاشات الصغيرة */
-    }
-
-    #main-nav {
-        /* إعداد القائمة لتنزلق */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        align-items: center;
-        height: 0; /* لإخفائها */
-        overflow: hidden;
-        transition: height 0.3s ease-in-out;
-    }
-
-    #main-nav.open {
-        /* تظهر عند التفعيل عبر JavaScript */
-        height: 220px; /* اضبط الارتفاع حسب عدد الروابط */
-        padding: 10px 0;
-    }
-
-    #main-nav a {
-        padding: 10px 0;
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 0;
-    }
-}
 
 header h1 {
     color: var(--main-color);
     font-size: 1.6rem;
 }
 
-/* قائمة التنقل */
+/* القائمة الرئيسية */
 nav a {
     color: white;
     margin: 0 10px;
@@ -99,14 +46,33 @@ nav a:hover {
     color: var(--main-color);
 }
 
-/* الأقسام العامة */
-section {
-    padding: 100px 40px;
-    min-height: 100vh;
+/* زر القائمة للجوال */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
-/* قسم الرئيسية */
+/* تنسيق الأقسام العام - **تم إزالة min-height: 100vh** */
+section {
+    padding: 100px 40px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* =================================== */
+/* 2. قسم الرئيسية (Home) */
+/* =================================== */
 .home {
+    min-height: 100vh; /* يبقى 100vh هنا فقط */
     background: linear-gradient(135deg, #0d6efd33, #000);
     display: flex;
     flex-direction: column;
@@ -116,50 +82,43 @@ section {
 }
 
 .home h2 {
-    font-size: 3rem;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
 }
 
 .home .color {
     color: var(--main-color);
 }
-/* في ملف style.css - ضمن المحدد .home */
-
-.home h2 {
-    font-size: 5rem; /* تم تكبير الخط من 3rem إلى 5rem */
-    margin-bottom: 0.5rem;
-}
 
 .home p {
-    max-width: 700px; /* زيادة العرض قليلاً */
-    font-size: 1.5rem; /* تم تكبير خط الوصف */
+    max-width: 700px;
+    font-size: 1.5rem;
     opacity: 0.8;
 }
 
-/* تحسين مظهر زر CTA */
-.cta {
-    padding: 12px 30px; /* زيادة حجم الزر */
-    border-radius: 50px; /* جعله دائري الحواف */
-    font-size: 1.1rem;
-    font-weight: 600;
-    /* إضافة ظل خفيف لإبرازه */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+/* تأثير الكتابة (Blinking Cursor Effect) */
+@keyframes blink {
+    50% { border-color: transparent; }
 }
 
-.home p {
-    max-width: 600px;
-    font-size: 1.2rem;
-    opacity: 0.9;
+.typed-text {
+    border-right: 2px solid white;
+    animation: blink 0.75s step-end infinite;
+    font-weight: bold;
 }
 
-/* زر العمل (CTA) */
+/* زر CTA */
 .cta {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     background: var(--main-color);
     color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 12px 30px;
+    border-radius: 50px;
     text-decoration: none;
     transition: 0.3s;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .cta:hover {
@@ -167,66 +126,77 @@ section {
     color: var(--main-color);
 }
 
-/* أقسام .about, .services, .projects, .blog, .contact */
-.about, .services, .projects, .blog, .contact {
-    background: #111;
-    border-top: 1px solid #222;
-}
+/* =================================== */
+/* 3. أقسام About و Services (Skills/Services Cards) */
+/* =================================== */
 
-.section-title {
-    text-align: center;
-    color: var(--main-color);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* قسم المهارات والخدمات */
+/* تنسيق المهارات في قسم "من أنا" */
 .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .skill {
     background: var(--card-bg);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-weight: bold;
-}
-/* في ملف style.css - ضمن قسم .skills */
-
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem; /* زيادة المسافة بين المهارات */
-    margin-top: 2.5rem; /* زيادة المسافة عن العنوان */
-}
-
-.skill {
-    background: var(--card-bg); /* الخلفية الشفافة */
     padding: 0.8rem 1.8rem;
-    border-radius: 5px; /* شكل مستطيل أكثر حدة */
+    border-radius: 5px;
     font-weight: bold;
     color: var(--text-color);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* إضافة حدود خفيفة */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: 0.3s;
-    cursor: default; /* لجعلها تبدو كمعلومات وليست أزرار */
+    cursor: default;
 }
 
 .skill:hover {
-    background: var(--main-color); /* تغيير الخلفية للون الثيم عند المرور */
-    color: var(--bg-color); /* جعل النص داكناً ليظهر على لون الثيم */
-    transform: translateY(-3px) scale(1.05); /* حركة خفيفة للأعلى والتكبير */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* إضافة ظل */
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* قسم الأعمال (Gallery) */
+/* تنسيق بطاقات الخدمات في قسم "الخدمات" */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    border: 2px solid transparent; 
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.service-card:hover {
+    border-color: var(--main-color); 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* =================================== */
+/* 4. قسم الأعمال (Gallery) */
+/* =================================== */
 .gallery {
     display: grid;
-    /* **تصحيح الخطأ هنا:** تم تجميع خواص grid-template-columns */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 1.5rem;
     margin-top: 2rem; 
@@ -250,288 +220,39 @@ section {
     transform: scale(1.05);
 }
 
-/* غطاء الصورة (Overlay) */
+/* تنسيق الغطاء (Overlay) الجديد */
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8); 
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: 0.3s;
-    font-size: 2rem;
-}
-
-.project:hover .overlay {
-    opacity: 1;
-}
-
-/* قسم المدونة */
-.blog-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.blog-card {
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-}
-
-/* قسم التواصل (Form) */
-form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: auto;
-    gap: 1rem;
-}
-/* في ملف style.css - تطوير محددات form */
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px; /* زيادة العرض قليلاً */
-    margin: auto;
-    gap: 1.2rem; /* زيادة التباعد بين العناصر */
-}
-
-/* تنسيق عام لحقول الإدخال والنص */
-.input-field {
-    padding: 15px; /* زيادة حجم الـ padding */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* حدود خفيفة */
-    border-radius: 8px;
-    background: #1e1e1e; /* خلفية أغمق قليلاً من الخلفية العامة */
-    color: white;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-/*Placeholder text color*/
-.input-field::placeholder {
-    color: #aaa;
-}
-
-/* تأثير التركيز (Focus Effect) */
-.input-field:focus {
-    outline: none;
-    border-color: var(--main-color); /* حدود بلون الثيم عند التركيز */
-    box-shadow: 0 0 5px var(--main-color);
-}
-
-/* تنسيق زر الإرسال */
-.cta-submit {
-    padding: 12px;
-    background: var(--main-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.cta-submit:hover {
-    background: #fff;
-    color: var(--main-color);
-    transform: translateY(-2px);
-}
-
-input, textarea, button {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-}
-
-button {
-    background: var(--main-color);
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background: white;
-    color: var(--main-color);
-}
-
-/* لوحة إعدادات الثيم */
-#theme-panel {
-    position: fixed;
-    left: 10px;
-    bottom: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    color: white;
-    z-index: 9999;
-    font-size: 14px;
-}
-
-#color-picker {
-    margin-top: 0.5rem;
-    cursor: pointer;
-    /* إخفاء الحدود القياسية */
-    border: 1px solid white; 
-    padding: 0; 
-    width: 2rem; 
-    height: 2rem;
-}
-
-/* خلفية الرسوم المتحركة */
-#bg-animation {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-}
-/* ... (في نهاية ملف CSS) ... */
-
-/* تنسيق التركيز على الإدخالات */
-input:focus, textarea:focus {
-    outline: none; /* إزالة التركيز الافتراضي */
-    border: 2px solid var(--main-color); /* إضافة لون الثيم */
-    box-shadow: 0 0 8px rgba(var(--main-color-rgb, 13, 110, 253), 0.5); /* إضافة ظل خفيف */
-}/* المحدد العام للأقسام (المتبقي من كودك) */
-section {
-    padding: 100px 40px;
-    /* لا تحدد ارتفاع هنا */
-}
-
-/* قسم الرئيسية فقط يملأ الشاشة */
-.home {
-    /* ... خصائص الخلفية والتوسيط ... */
-    min-height: 100vh; /* يتم تطبيقه هنا فقط */
-}
-/* تقليل الـ 100px إلى 80px أو أقل حسب رغبتك */
-section {
-    padding: 80px 40px;
-    /* ... */
-}
-/* تأثير وميض المؤشر (Blinking Cursor Effect) */
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-.typed-text {
-    /* جعل المؤشر يظهر كخط رأسي */
-    border-right: 2px solid white; 
-    /* تطبيق الوميض */
-    animation: blink 0.75s step-end infinite; 
-    font-weight: bold;
-}
-/* ... باقي الكود ... */
-
-.home h2 {
-    font-size: 5rem; /* الخط الجديد */
-    margin-bottom: 0.5rem; 
-}
-
-.home p {
-    max-width: 700px; /* العرض الجديد */
-    font-size: 1.5rem; /* الخط الجديد */
-    opacity: 0.8;
-}
-
-.cta {
-    margin-top: 1.5rem; /* زيادة المسافة العلوية */
-    background: var(--main-color);
-    color: white;
-    padding: 12px 30px; /* الحجم الجديد */
-    border-radius: 50px; /* الشكل الجديد */
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* **الكود الجديد لتأثير الكتابة** */
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-/* في ملف style.css - أضف هذا الجزء الجديد */
-
-.service-container {
-    display: grid;
-    /* 3 أعمدة في الشاشات الكبيرة، عمود واحد في الشاشات الصغيرة */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.service-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    transition: 0.3s;
-    border: 2px solid transparent; /* حدود شفافة لـ hover */
-}
-
-.service-card i {
-    font-size: 3rem;
-    color: var(--main-color);
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-.service-card:hover {
-    border-color: var(--main-color); /* إظهار الحدود بلون الثيم */
-    transform: translateY(-5px); /* رفع البطاقة للأعلى */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-/* ... المحدد .project:hover يبقى كما هو ... */
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8); /* زيادة كثافة اللون الداكن */
-    color: white;
-    /* تغيير التوسيط إلى Flexbox لإدارة المحتوى */
-    display: flex;
-    flex-direction: column; /* ترتيب العناصر عمودياً */
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
     opacity: 0;
-    transition: 0.5s ease-in-out; /* زيادة زمن الانتقال قليلاً */
-    /* إضافة تأثير إزاحة عند hover */
-    transform: translateY(100%); /* لإخفائه أسفل الصورة في البداية */
+    transition: 0.5s ease-in-out; 
+    transform: translateY(100%); 
 }
 
-/* تعديل حركة Hover: نجعل الغطاء يرتفع للأعلى */
 .project:hover .overlay {
     opacity: 1;
-    transform: translateY(0); /* عند Hover، يرتفع ليغطي الصورة */
+    transform: translateY(0); 
 }
 
 .overlay h3 {
     color: var(--main-color);
     margin-bottom: 5px;
+    font-size: 1.5rem;
 }
 
 .overlay p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 15px;
 }
 
-/* تنسيق زر "شاهد المشروع" داخل الغطاء */
 .view-btn {
     background: var(--main-color);
     color: white;
@@ -539,28 +260,31 @@ section {
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
+    font-weight: bold;
 }
 
 .view-btn:hover {
     background: white;
     color: var(--main-color);
 }
-/* في ملف style.css - تطوير .blog-cards و .blog-card */
 
+/* =================================== */
+/* 5. قسم المدونة (Blog) */
+/* =================================== */
 .blog-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* زيادة المسافة قليلاً */
+    gap: 2rem; 
     margin-top: 3rem;
 }
 
 .blog-card {
     background: var(--card-bg);
-    padding: 0; /* إزالة الـ padding لتبدأ الصورة من الحافة */
+    padding: 0;
     border-radius: 10px;
-    overflow: hidden; /* إخفاء أي شيء يخرج عن حواف البطاقة */
-    text-decoration: none; /* إزالة خطوط الروابط */
-    color: var(--text-color);
+    overflow: hidden;
+    text-decoration: none; /* مهم جداً */
+    color: var(--text-color); /* مهم جداً */
     transition: 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -570,10 +294,9 @@ section {
     height: auto;
     display: block;
     object-fit: cover;
-    transition: transform 0.5s; /* إضافة حركة على الصورة داخل البطاقة */
+    transition: transform 0.5s; 
 }
 
-/* التنسيق الداخلي للمحتوى */
 .blog-card h3, .blog-card p {
     padding: 0 1rem;
 }
@@ -588,22 +311,110 @@ section {
     padding-bottom: 1rem;
 }
 
-/* تأثير التفاعل (Hover Effect) */
 .blog-card:hover {
-    transform: translateY(-8px); /* حركة قوية للأعلى */
+    transform: translateY(-8px); 
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* حركة الصورة داخل البطاقة عند الـ hover */
 .blog-card:hover img {
-    transform: scale(1.05); /* تكبير الصورة عند المرور */
+    transform: scale(1.05);
 }
 
-.typed-text {
-    border-right: 2px solid white;
-    animation: blink 0.75s step-end infinite;
+/* =================================== */
+/* 6. قسم التواصل (Contact) */
+/* =================================== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; 
+    margin: auto;
+    gap: 1.2rem;
+}
+
+.input-field {
+    padding: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 8px;
+    background: #1e1e1e; 
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-field::placeholder {
+    color: #aaa;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+.cta-submit {
+    padding: 12px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
 }
 
-/* ... باقي الكود ... */
+.cta-submit:hover {
+    background: white;
+    color: var(--main-color);
+    transform: translateY(-2px);
+}
 
+/* =================================== */
+/* 7. الميديا كويري (Media Queries) */
+/* =================================== */
+
+@media (max-width: 768px) {
+    /* تصغير خط العنوان في الجوال */
+    .home h2 {
+        font-size: 3rem;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    #menu-toggle {
+        display: block; 
+    }
+
+    #main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+    }
+
+    #main-nav.open {
+        height: 250px; 
+        padding: 10px 0;
+    }
+
+    #main-nav a {
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    
+    section {
+        padding: 60px 20px; /* تقليل الحشوة في الجوال */
+    }
+}
