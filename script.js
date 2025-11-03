@@ -1,64 +1,46 @@
-// زر التبديل بين الوضع الليلي والنهاري
-const modeToggle = document.getElementById("mode-toggle");
-const body = document.body;
+(function(){
+  // Theme toggle
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark') body.classList.add('dark');
+  toggle.addEventListener('click', ()=>{
+    body.classList.toggle('dark');
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+  });
 
-// التحقق من الوضع المحفوظ مسبقًا في LocalStorage
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-  modeToggle.textContent = "☀️";
-} else {
-  modeToggle.textContent = "🌙";
-}
+  // Client form flow: بعد الارسال تظهر صفحة الانتظار وتخفي صفحة العميل
+  const form = document.getElementById('clientForm');
+  const clientSection = document.getElementById('client');
+  const waitingSection = document.getElementById('waiting');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // محاكاة اتمام العملية: هنا يمكنك ادخال طلب إلى API
+    clientSection.classList.add('hidden');
+    waitingSection.classList.remove('hidden');
 
-// عند الضغط على الزر
-modeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
+    // حفظ بيانات بسيطة في localStorage لعرض لاحقاً او تتبع
+    const data = new FormData(form);
+    const obj = {};
+    data.forEach((v,k)=> obj[k]=v);
+    localStorage.setItem('lastOrder', JSON.stringify(obj));
+  });
 
-  if (body.classList.contains("dark")) {
-    modeToggle.textContent = "☀️";
-    localStorage.setItem("theme", "dark");
-  } else {
-    modeToggle.textContent = "🌙";
-    localStorage.setItem("theme", "light");
-  }
-});
-// تأثير الأكواد المتساقطة (Matrix effect)
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
+  // زر العودة
+  document.getElementById('backToHome').addEventListener('click', ()=>{
+    waitingSection.classList.add('hidden');
+    clientSection.classList.remove('hidden');
+    location.hash = '#home';
+  });
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
-const chars = "01HTMLCSSJAVASCRIPT<>[]{}💻";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
-
-for (let i = 0; i < columns; i++) {
-  drops[i] = 1;
-}
-
-function draw() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = "#ff4d4d"; // اللون الأحمر البرمجي
-  ctx.font = fontSize + "px monospace";
-
-  for (let i = 0; i < drops.length; i++) {
-    const text = chars.charAt(Math.floor(Math.random() * chars.length));
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
-    }
-    drops[i]++;
-  }
-}
-
-setInterval(draw, 40);
-
-window.addEventListener("resize", () => {
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-});
+  // تحسين تجربة الروابط السهلة
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const href = a.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+})();
