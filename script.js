@@ -1,11 +1,13 @@
-// زر الوضع الليلي/النهاري
+// زر التبديل بين الوضع الليلي والنهاري
 const modeToggle = document.getElementById("mode-toggle");
 const body = document.body;
 
-// تحقق من الوضع المحفوظ مسبقًا
+// التحقق من الوضع المحفوظ مسبقًا في LocalStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   modeToggle.textContent = "☀️";
+} else {
+  modeToggle.textContent = "🌙";
 }
 
 // عند الضغط على الزر
