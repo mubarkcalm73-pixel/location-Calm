@@ -122,6 +122,28 @@ section {
 .home .color {
     color: var(--main-color);
 }
+/* في ملف style.css - ضمن المحدد .home */
+
+.home h2 {
+    font-size: 5rem; /* تم تكبير الخط من 3rem إلى 5rem */
+    margin-bottom: 0.5rem;
+}
+
+.home p {
+    max-width: 700px; /* زيادة العرض قليلاً */
+    font-size: 1.5rem; /* تم تكبير خط الوصف */
+    opacity: 0.8;
+}
+
+/* تحسين مظهر زر CTA */
+.cta {
+    padding: 12px 30px; /* زيادة حجم الزر */
+    border-radius: 50px; /* جعله دائري الحواف */
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* إضافة ظل خفيف لإبرازه */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+}
 
 .home p {
     max-width: 600px;
