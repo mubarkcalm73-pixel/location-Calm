@@ -1,277 +1,116 @@
-:root {
-    --main-color: #0d6efd;
-    --bg-color: #0a0a0a;
-    --text-color: #fff;
-    --card-bg: rgba(255, 255, 255, 0.1);
-}
-
-/* =================================== */
-/* 1. التنسيق العام و Header (مصحح) */
-/* =================================== */
 body {
-    margin: 0;
-    font-family: "Cairo", sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    scroll-behavior: smooth;
-    padding-top: 70px; /* **التصحيح: إضافة مسافة أسفل الـ Header الثابت** */
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+  background-color: #fff;
+  color: #222;
+  transition: 0.3s;
 }
 
-/* تنسيق الخلفية المتحركة */
-#bg-animation {
-    position: fixed;
-    inset: 0;
-    z-index: -1; 
+/* الوضع الليلي */
+body.dark {
+  background-color: #121212;
+  color: #eee;
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95); /* زيادة كثافة الخلفية */
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
+  background-color: #ff4b4b;
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* ... (باقي تنسيقات Header و nav) ... */
-
-/* =================================== */
-/* 2. قسم الرئيسية (Home) - (يبقى min-height: 100vh هنا فقط) */
-/* =================================== */
-.home {
-    min-height: 100vh; 
-    background: linear-gradient(135deg, #0d6efd33, #000);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 0; /* إزالة الـ padding الإضافي */
-    padding-bottom: 100px;
+header h1 {
+  font-size: 24px;
 }
 
-.cta {
-    margin-top: 1.5rem;
-    background: var(--main-color);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 1.1rem;
-    font-weight: 600;
-    /* **التطوير: إضافة ظل داخلي وخارجي (Glow)** */
-    box-shadow: 0 0 10px var(--main-color), 
-                0 0 25px rgba(0, 0, 0, 0.5); 
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.cta:hover {
-    background: white;
-    color: var(--main-color);
-    /* **التطوير: توهج أقوى عند المرور** */
-    box-shadow: 0 0 5px white, 
-                0 0 25px var(--main-color), 
-                0 0 50px var(--main-color);
-    transform: scale(1.05);
+nav a.active {
+  text-decoration: underline;
 }
 
-.home .color {
-    color: var(--main-color);
-}
-/* ... (باقي تنسيقات Home و CTA) ... */
-
-/* =================================== */
-/* 3. أقسام About و Services (المطورة) */
-/* =================================== */
-
-section {
-    padding: 100px 40px;
-    /* تم إزالة min-height: 100vh من هنا */
+#mode-toggle {
+  background: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-.section-title {
-    color: var(--main-color);
-    /* ... */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.skills {
-    /* ... (تنسيق بطاقات المهارات) ... */
+.hero .btn {
+  background-color: #ff4b4b;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.skill:hover {
-    background: var(--main-color);
-    /* ... */
+.hero .btn:hover {
+  background-color: #ff6666;
 }
 
-.skill {
-    /* ... (التنسيق الأصلي) ... */
-    /* **التطوير: إضافة تأثير الزجاج اللامع** */
-    background: rgba(255, 255, 255, 0.05); /* تقليل شفافية الخلفية */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* ظل ثابت */
+.client-section {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
 }
 
-.skill:hover {
-    background: var(--main-color);
-    /* ... (التنسيق الأصلي) ... */
-    box-shadow: 0 0 20px var(--main-color); /* توهج عند المرور */
+.client-form input,
+.client-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-.service-card {
-    /* ... (التنسيق الأصلي) ... */
-    /* **التطوير: زيادة العمق والتميز** */
-    background: rgba(255, 255, 255, 0.03); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* ظل أعمق */
+.client-form .btn {
+  width: 100%;
 }
 
-.service-card:hover {
-    border-color: var(--main-color); 
-    transform: translateY(-10px); /* زيادة حركة الارتفاع */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 
-                0 0 10px var(--main-color); /* ظل وتوهج */
+.contact-info {
+  text-align: center;
+  margin-top: 40px;
 }
 
-/* تنسيق بطاقات الخدمات */
-.service-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    /* ... */
-}
-.service-card:hover {
-    border-color: var(--main-color); 
-    transform: translateY(-8px); /* زيادة حركة الارتفاع */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* ظل أعمق */
+.contact-info .buttons {
+  margin-top: 15px;
 }
 
-.skill {
-    /* ... خصائص ... */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل ثابت لعمق أكبر */
+.contact-info .btn {
+  display: inline-block;
+  margin: 5px;
+  background-color: #ff4b4b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.service-card i {
-    color: var(--main-color);
-    /* ... */
+.contact-info .btn:hover {
+  background-color: #ff6666;
 }
-
-.service-card:hover {
-    border-color: var(--main-color); 
-    /* ... */
-}
-
-/* =================================== */
-/* 4. قسم الأعمال (Gallery) - (المطور) */
-/* =================================== */
-
-.overlay h3 {
-    color: var(--main-color);
-    /* ... */
-}
-
-.view-btn {
-    background: var(--main-color);
-    /* ... */
-}
-
-/* =================================== */
-/* 5. قسم المدونة (Blog) - (المطور) */
-/* =================================== */
-
-.blog-card h3 {
-    color: var(--main-color);
-    /* ... */
-}
-.blog-card {
-    /* ... خصائص ... */
-    /* إضافة تدرج على الصورة لجعل النص أوضح */
-    position: relative;
-    overflow: hidden;
-}
-
-.blog-card img {
-    /* ... خصائص ... */
-    transition: transform 0.5s; 
-}
-
-.blog-card h3, .blog-card p {
-    position: relative; /* لضمان ظهور النص فوق الصورة */
-    z-index: 1;
-    /* ... */
-}
-/* في قسم 5. قسم المدونة (Blog) */
-
-.blog-card {
-    /* ... (التنسيق الأصلي) ... */
-    transition: 0.4s;
-}
-
-.blog-card:hover {
-    transform: translateY(-12px); /* ارتفاع أكبر */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    /* **التطوير: إضافة خط سفلي بلون الثيم** */
-    border-bottom: 5px solid var(--main-color); 
-}
-
-/* =================================== */
-/* 6. قسم التواصل (Contact) - (المطور) */
-/* =================================== */
-
-.input-field:focus {
-    border-color: var(--main-color); 
-    box-shadow: 0 0 5px var(--main-color);
-}
-
-.cta-submit {
-    background: var(--main-color);
-    /* ... */
-}
-
-/* =================================== */
-/* 7. تذييل الصفحة (Footer) وتخصيص المظهر */
-/* =================================== */
 
 footer {
-    background: #111;
-    text-align: center;
-    padding: 20px 40px;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #ff4b4b;
+  color: white;
+  margin-top: 40px;
 }
-
-.social-links a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--main-color);
-}
-
-/* لوحة تخصيص المظهر */
-#theme-panel {
-    position: fixed;
-    left: 10px;
-    bottom: 10px;
-    background: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة */
-    padding: 1rem;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    color: white;
-    z-index: 99999; /* لضمان بقائها في المقدمة */
-    font-size: 14px;
-    border: 1px solid var(--main-color); /* إضافة حدود بلون الثيم */
-}
-
-#color-picker {
-    margin-top: 0.5rem;
-    cursor: pointer;
-}
-
-/* ... (Media Queries) ... */
