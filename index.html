@@ -1,141 +1,37 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الاحترافي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إعلانات ممولة</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <canvas id="bg-animation"></canvas>
+  <!-- ✅ شريط التنقل -->
+  <header>
+    <h1>إعلانات ممولة</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="client.html">العميل</a>
+      <a href="waiting.html">انتظار</a>
+    </nav>
+    <button id="mode-toggle">🌙</button>
+  </header>
 
-    <header>
-        <h1>موقعي الاحترافي</h1>
-        <button id="menu-toggle" aria-label="Toggle Navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav id="main-nav">
-            <a href="#home">الرئيسية</a>
-            <a href="#about">من أنا</a>
-            <a href="#services">الخدمات</a>
-            <a href="#projects">الأعمال</a>
-            <a href="#blog">المدونة</a>
-            <a href="#contact">تواصل</a>
-        </nav>
-    </header>
+  <!-- ✅ المحتوى الرئيسي -->
+  <main class="hero">
+    <h2>مرحبًا بك في موقع إعلانات ممولة</h2>
+    <p>نحن نساعدك على الوصول إلى جمهورك المستهدف من خلال حملات تسويقية ذكية وممولة باحترافية.</p>
+    <a href="client.html" class="btn">ابدأ الآن</a>
+  </main>
 
-    <section id="home" class="home">
-        <h2>أنا <span class="typed-text">مطور</span><span class="color"> ويب</span></h2>
-        <p>بناء واجهات أمامية تفاعلية وحديثة، متخصصة في تقديم تجارب مستخدم سلسة ومميزة.</p>
-        <a href="#projects" class="cta">شاهد أعمالي <i class="fas fa-arrow-right"></i></a>
-    </section>
+  <!-- ✅ الفوتر -->
+  <footer>
+    <p>© جميع الحقوق محفوظة Mubark Calm7</p>
+  </footer>
 
-    <section id="about" class="about">
-        <h2 class="section-title">من أنا</h2>
-        <p style="text-align: center; max-width: 600px; margin: auto;">مطور واجهات أمامية متخصص في بناء تجارب مستخدم مريحة وجميلة، دائماً أتعلم أحدث التقنيات.</p>
-        <div class="skills">
-            <div class="skill">HTML/DIV</div>
-            <div class="skill">CSS/SASS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">React</div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <h2 class="section-title">الخدمات</h2>
-        <div class="service-container">
-            <div class="service-card">
-                <i class="fas fa-desktop"></i>
-                <h3>تصميم مواقع متجاوب</h3>
-                <p>بناء واجهات أمامية تعمل بكفاءة على جميع الأجهزة (موبايل، تابلت، حاسوب).</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-code"></i>
-                <h3>تطوير واجهات أمامية</h3>
-                <p>استخدام أحدث تقنيات HTML، CSS، وJavaScript لإنشاء تطبيقات تفاعلية.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-rocket"></i>
-                <h3>تحسين الأداء والسرعة</h3>
-                <p>تحسين سرعة تحميل الموقع وأدائه لضمان أفضل تجربة للمستخدم وللـ SEO.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2 class="section-title">الأعمال</h2>
-        <div class="gallery">
-            <div class="project">
-                <img src="https://picsum.photos/400/250?1" alt="وصف المشروع 1">
-                <div class="overlay">
-                    <h3>اسم المشروع الأول</h3>
-                    <p>تصميم واجهة متجر إلكتروني باستخدام تقنية حديثة.</p>
-                    <a href="#" class="view-btn">شاهد المشروع</a>
-                </div>
-            </div>
-            <div class="project">
-                <img src="https://picsum.photos/400/250?2" alt="وصف المشروع 2">
-                <div class="overlay">
-                    <h3>اسم المشروع الثاني</h3>
-                    <p>تطبيق ويب لإدارة المهام والمشاريع.</p>
-                    <a href="#" class="view-btn">شاهد المشروع</a>
-                </div>
-            </div>
-            <div class="project">
-                <img src="https://picsum.photos/400/250?3" alt="وصف المشروع الثالث">
-                <div class="overlay">
-                    <h3>اسم المشروع الثالث</h3>
-                    <p>صفحة هبوط (Landing Page) جذابة ومميزة.</p>
-                    <a href="#" class="view-btn">شاهد المشروع</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="blog">
-        <h2 class="section-title">المدونة</h2>
-        <div class="blog-cards">
-            <a href="#" class="blog-card">
-                <img src="https://picsum.photos/400/200?blog1" alt="صورة المدونة">
-                <h3>أفضل نصائح لتصميم الويب</h3>
-                <p>تعلم كيف تجعل موقعك جذاباً ومريح الاستجابة.</p>
-            </a>
-            <a href="#" class="blog-card">
-                <img src="https://picsum.photos/400/200?blog2" alt="صورة المدونة">
-                <h3>لماذا يجب أن تتعلم JavaScript</h3>
-                <p>اللغة المستقبل في تطوير الويب التفاعلي.</p>
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2 class="section-title">تواصل معي</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="الاسم الكامل" required class="input-field">
-            <input type="email" placeholder="البريد الإلكتروني" required class="input-field">
-            <textarea rows="5" placeholder="رسالتك" required class="input-field"></textarea>
-            <button type="submit" class="cta-submit">إرسال</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 موقعي الاحترافي. جميع الحقوق محفوظة.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
-
-    <div id="theme-panel">
-        <h4>تخصيص المظهر</h4>
-        <audio id="click-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5ce3ad6c7c.mp3?filename=click-124467.mp3" preload="auto"></audio>
-        <input type="color" id="color-picker" value="#0d6efd">
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
