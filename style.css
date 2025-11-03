@@ -9,6 +9,16 @@ body.dark {
   --bg-color: #111;
   --text-color: #eee;
 }
+header {
+  background: linear-gradient(45deg, #e31b23, #ffcc00, #e31b23);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 body {
   font-family: 'Tajawal', sans-serif;
