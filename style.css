@@ -14,7 +14,7 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
    scroll-behavior: smooth;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 
 /* ... باقي كود CSS ... */
