@@ -3,78 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إعلانات ممولة</title>
+  <title>Mubark Calm7 | مصمم مواقع</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- ✅ الشريط العلوي -->
+  <!-- زر الوضع الليلي -->
+  <button id="mode-toggle" class="mode-toggle">🌙</button>
+
+  <!-- رأس الصفحة -->
   <header>
-    <h1>إعلانات ممولة</h1>
+    <h1 class="logo">Mubark Calm7</h1>
     <nav>
-      <a href="index.html" class="active">الرئيسية</a>
-      <a href="client.html">العميل</a>
-      <a href="waiting.html">انتظار</a>
+      <a href="#">الرئيسية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#contact">تواصل</a>
     </nav>
-    <button id="mode-toggle">🌙</button>
   </header>
 
-  <!-- ✅ القسم الأول: المقدمة -->
+  <!-- القسم الترحيبي -->
   <section class="hero">
-    <div class="hero-content">
-      <h2>مرحبًا بك في موقع <span>إعلانات ممولة</span></h2>
-      <p>نساعدك على الوصول إلى جمهورك المستهدف بأحدث أساليب التسويق الرقمي، ونجعل إعلانك يصل لمن يهتم فعلًا.</p>
-      <div class="hero-buttons">
-        <a href="client.html" class="btn main-btn">ابدأ الآن</a>
-        <a href="#services" class="btn secondary-btn">تعرف أكثر</a>
-      </div>
+    <h2>مرحبًا بك في موقعي الشخصي 👋</h2>
+    <p>أنا <strong>Mubark Calm7</strong>، مصمم ومطور مواقع محترف أقدم حلولًا رقمية حديثة تناسب جميع الأنشطة التجارية والشخصية.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn-primary">شاهد خدماتي</a>
+      <a href="#contact" class="btn-secondary">تواصل معي</a>
     </div>
   </section>
 
-  <!-- ✅ القسم الثاني: الخدمات -->
+  <!-- قسم الخدمات -->
   <section id="services" class="services">
-    <h2>خدماتنا</h2>
+    <h2>خدماتي في تصميم المواقع</h2>
     <div class="service-boxes">
-      <div class="service">
-        <i class="fas fa-bullhorn"></i>
-        <h3>إعلانات ممولة فعالة</h3>
-        <p>نصمم حملات إعلانية تحقق أعلى النتائج بأقل تكلفة ممكنة.</p>
+
+      <div class="service-box">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>تصميم مواقع احترافية</h3>
+        <p>أصمم مواقع متجاوبة بأحدث التقنيات لتناسب جميع الأجهزة.</p>
       </div>
-      <div class="service">
-        <i class="fas fa-chart-line"></i>
-        <h3>تحليل الأداء</h3>
-        <p>نقدّم تقارير دقيقة لتحليل نجاح حملاتك وتحديد نقاط التحسين.</p>
+
+      <div class="service-box">
+        <i class="fa-solid fa-paintbrush"></i>
+        <h3>تصميم واجهات المستخدم</h3>
+        <p>أقدم تصاميم جذابة وسهلة الاستخدام تُظهر علامتك بشكل فريد.</p>
       </div>
-      <div class="service">
-        <i class="fas fa-users"></i>
-        <h3>استهداف الجمهور</h3>
-        <p>نستهدف الفئة المناسبة لمنتجك أو خدمتك لتحقيق أقصى عائد.</p>
+
+      <div class="service-box">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>تطوير المواقع وتحسين الأداء</h3>
+        <p>أعمل على تسريع المواقع وتحسين تجربة المستخدم لتحقيق نتائج أفضل.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- ✅ القسم الثالث: لماذا نحن -->
-  <section class="why-us">
-    <h2>لماذا تختارنا؟</h2>
+  <!-- قسم لماذا تختارني -->
+  <section class="why-me">
+    <h2>لماذا تختارني؟</h2>
     <ul>
-      <li><i class="fas fa-check-circle"></i> نمتلك خبرة طويلة في مجال التسويق الرقمي.</li>
-      <li><i class="fas fa-check-circle"></i> نتابع حملتك لحظة بلحظة لتحقيق أهدافك.</li>
-      <li><i class="fas fa-check-circle"></i> دعم فني واستشارات مجانية على مدار الساعة.</li>
+      <li>خبرة في تصميم المواقع الحديثة والمتجاوبة.</li>
+      <li>اهتمام بالتفاصيل وتجربة المستخدم.</li>
+      <li>دعم فني مستمر بعد التسليم.</li>
     </ul>
   </section>
 
-  <!-- ✅ القسم الرابع: تواصل سريع -->
-  <section class="contact-now">
-    <h2>هل أنت مستعد لبدء حملتك الإعلانية؟</h2>
-    <a href="client.html" class="btn main-btn big">📞 تواصل معنا الآن</a>
+  <!-- قسم التواصل -->
+  <section id="contact" class="contact">
+    <h2>تواصل معي</h2>
+    <p>📧 MubarkCalm73@gmail.com</p>
+    <p>📞 +253 77053644</p>
   </section>
 
-  <!-- ✅ الفوتر -->
+  <!-- الفوتر -->
   <footer>
-    <p>© جميع الحقوق محفوظة Mubark Calm7</p>
+    <p>© جميع الحقوق محفوظة 2025 Mubark Calm7</p>
   </footer>
 
 </body>
