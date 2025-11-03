@@ -1,63 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مصمم مواقع - stylesheettle/title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مبارك كالم — Mubark/Calm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <h1 class="logo">🚀 Mubark/Calmمصمم مواقع</h1>
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#client">العميل</a>
-      <a href="#blog">المدونة</a>
-    </nav>
-    <button id="theme-toggle">🌙</button>
-    <a href="client.html" class="btn">اطلب تصميمك الآن 🚀</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-logo">MC</div>
+        <div class="brand-name"><span class="ar">مبارك كالم</span><span class="en">Mubark/Calm</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="client.html">العميل</a>
+        <a href="#portfolio">أعمال</a>
+        <button id="themeToggle" class="icon-btn" aria-label="تبديل الوضع">🌙</button>
+      </nav>
+    </div>
   </header>
-  
-  <section id="home" class="section fade-in">
-    <h2>مرحباً بك في عالمي البرمجي 💡</h2>
-    <p>أنا مصمم مواقع محترف أصنع لك واجهات مميزة بلغة الجمال والإبداع.</p>
-    <button class="cta">✨ اطلب تصميمك الآن</button>
-  </section>
 
-  <section id="identity" class="card fade-in">
-    <h3>بطاقة التعريف</h3>
-    <p><strong>الاسم:</strong> مبارك كالم</p>
-    <p><strong>البريد:</strong> <a href="mailto:MubarkCalm73@gmail.com">📧 MubarkCalm73@gmail.com</a></p>
-    <p><strong>الواتساب:</strong> <a href="https://wa.me/25377053644">📱 +253 77053644</a></p>
-  </section>
+  <main>
+    <section class="hero container">
+      <div class="hero-left">
+        <h1 class="headline">مواقع تُمثّل هويتك</h1>
+        <p class="subtitle">واجهة جذّابة — أداء سريع — هوية رقمية</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="client.html" id="orderBtn">اطلب تصميمك الآن 🚀</a>
+          <a class="btn ghost" href="#portfolio">أعمال سابقة</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="id-top">
+          <div class="id-logo">MC</div>
+          <div class="id-meta">
+            <div class="name">Mubark/Calm</div>
+            <div class="role">مصمم مواقع</div>
+          </div>
+        </div>
+        <div class="id-contact">
+          <a href="mailto:MubarkCalm73@gmail.com" class="contact-line">📧 MubarkCalm73@gmail.com</a>
+          <a href="https://wa.me/25377053644" class="contact-line">📱 +253 77053644</a>
+        </div>
+      </div>
+    </section>
 
-  <section id="client" class="section fade-in">
-    <h2>نموذج العميل</h2>
-    <form id="clientForm">
-      <input type="text" placeholder="اسمك الكامل" required>
-      <input type="email" placeholder="بريدك الإلكتروني" required>
-      <textarea placeholder="صف مشروعك بإيجاز"></textarea>
-      <button type="submit">إرسال</button>
-    </form>
-  </section>
+    <section id="portfolio" class="container portfolio">
+      <h2 class="section-title">أعمال</h2>
+      <div class="projects">
+        <article class="project">
+          <div class="proj-media"></div>
+          <h3>مشروع تجريبي 01</h3>
+        </article>
+        <article class="project">
+          <div class="proj-media"></div>
+          <h3>مشروع تجريبي 02</h3>
+        </article>
+        <article class="project">
+          <div class="proj-media"></div>
+          <h3>مشروع تجريبي 03</h3>
+        </article>
+      </div>
+    </section>
 
-  <section id="waiting" class="section hidden fade-in">
-    <h2>جاري معالجة طلبك...</h2>
-    <div class="loader"></div>
-    <p>يرجى الانتظار قليلاً ⏳</p>
-  </section>
+  </main>
 
-  <section id="blog" class="section fade-in">
-    <h2>📚 المدونة</h2>
-    <article>
-      <h3>كيف تختار مصمم موقعك المثالي؟</h3>
-      <p>اختيار المصمم هو أول خطوة لنجاح مشروعك الرقمي. إليك أهم المعايير...</p>
-    </article>
-  </section>
-
-  <footer>
-    <p>© 2025 جميع الحقوق محفوظة لمبارك كالم.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-foot">Mubark/Calm</div>
+        <div class="small">© <span id="year"></span></div>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:MubarkCalm73@gmail.com">📧</a>
+        <a href="https://wa.me/25377053644">📱</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
