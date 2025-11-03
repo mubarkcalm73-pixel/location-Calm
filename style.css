@@ -444,6 +444,56 @@ section {
     transform: translateY(-5px); /* رفع البطاقة للأعلى */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
+/* ... المحدد .project:hover يبقى كما هو ... */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8); /* زيادة كثافة اللون الداكن */
+    color: white;
+    /* تغيير التوسيط إلى Flexbox لإدارة المحتوى */
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.5s ease-in-out; /* زيادة زمن الانتقال قليلاً */
+    /* إضافة تأثير إزاحة عند hover */
+    transform: translateY(100%); /* لإخفائه أسفل الصورة في البداية */
+}
+
+/* تعديل حركة Hover: نجعل الغطاء يرتفع للأعلى */
+.project:hover .overlay {
+    opacity: 1;
+    transform: translateY(0); /* عند Hover، يرتفع ليغطي الصورة */
+}
+
+.overlay h3 {
+    color: var(--main-color);
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* تنسيق زر "شاهد المشروع" داخل الغطاء */
+.view-btn {
+    background: var(--main-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: white;
+    color: var(--main-color);
+}
 
 .typed-text {
     border-right: 2px solid white;
