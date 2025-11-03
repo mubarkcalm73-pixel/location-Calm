@@ -200,6 +200,19 @@ section {
     z-index: 1;
     /* ... */
 }
+/* في قسم 5. قسم المدونة (Blog) */
+
+.blog-card {
+    /* ... (التنسيق الأصلي) ... */
+    transition: 0.4s;
+}
+
+.blog-card:hover {
+    transform: translateY(-12px); /* ارتفاع أكبر */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    /* **التطوير: إضافة خط سفلي بلون الثيم** */
+    border-bottom: 5px solid var(--main-color); 
+}
 
 /* =================================== */
 /* 6. قسم التواصل (Contact) - (المطور) */
