@@ -1,190 +1,127 @@
-/* خلفية الموقع - مخصصة للمبرمجين */
 body {
-  font-family: 'Tajawal', sans-serif;
   margin: 0;
-  padding: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80')
-    no-repeat center center fixed;
+  font-family: 'Tajawal', sans-serif;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+              url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=1400&q=80') 
+              no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
-  transition: background 0.5s ease, color 0.5s ease;
+  color: #222;
+  transition: 0.3s;
 }
 
-/* الوضع الليلي */
-body.dark {
-  background:
-    linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
-    url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80')
-    no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-}
-
-/* بقية التنسيقات */
 header {
+  background: #ff4d4d;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 header .logo {
-  font-size: 1.8em;
-  color: #ff4747;
+  color: #fff;
+  font-size: 22px;
   font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  margin: 0 15px;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
-nav a:hover {
-  color: #ff4747;
-}
-
-/* القسم الترحيبي */
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-  color: #fff;
-}
-
-.hero h2 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.2em;
-  max-width: 700px;
-  margin: 0 auto 25px;
-}
-
-.hero-buttons .btn-primary,
-.hero-buttons .btn-secondary {
-  padding: 12px 24px;
-  border-radius: 30px;
+#mode-toggle {
+  background: none;
   border: none;
-  cursor: pointer;
-  font-size: 1em;
-  text-decoration: none;
-  margin: 10px;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #ff4747;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #e63e3e;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.btn-secondary:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-/* الأقسام */
-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* الخدمات */
-.services {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-  margin: 40px auto;
-  width: 90%;
-  max-width: 1100px;
-}
-
-.service-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.service-box {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  padding: 25px;
-  width: 300px;
-  transition: transform 0.3s ease;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.service-box i {
-  font-size: 40px;
-  color: #ff4747;
-  margin-bottom: 15px;
-}
-
-/* لماذا تختارني */
-.why-me ul {
-  list-style: none;
-  padding: 0;
-}
-
-.why-me li {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
-
-/* التواصل */
-.contact p {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-/* الفوتر */
-footer {
-  background: rgba(255, 255, 255, 0.05);
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-}
-
-/* زر الوضع الليلي */
-.mode-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   font-size: 20px;
   cursor: pointer;
   color: #fff;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: rgba(255, 77, 77, 0.05);
+}
+
+.hero h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hero h2 span {
+  color: #ff4d4d;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px auto 30px;
+  color: #444;
+  max-width: 600px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.mode-toggle:hover {
-  background: #ff4747;
+.btn.primary {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.btn.secondary {
+  border: 2px solid #ff4d4d;
+  color: #ff4d4d;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.services {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.services h2 {
+  color: #ff4d4d;
+  font-size: 24px;
+}
+
+.service-cards {
+  display: grid;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.card {
+  background: #fff7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: #ff4d4d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
 }
