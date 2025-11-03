@@ -15,6 +15,18 @@ body {
     color: var(--text-color);
     scroll-behavior: smooth;
 }
+/* في ملف style.css - ضمن محدد body */
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    /* **أضف هذا السطر لضمان أن المحتوى يبدأ أسفل الـ Header الثابت** */
+    padding-top: 60px; 
+}
+
+/* ... باقي كود CSS ... */
 
 header {
     position: fixed;
