@@ -46,6 +46,57 @@ html,body{height:100%;margin:0;font-family:'Tajawal',system-ui,-apple-system,'Se
 .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .project{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 10px 26px rgba(8,15,20,0.04)}
 .proj-media{height:120px;border-radius:10px;background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.02))}
+/* تنسيقات عامة للهيكل */
+.section-padding {
+    padding: 60px 20px;
+}
+
+.section-title {
+    color: #FFC107; /* اللون الأصفر/البرتقالي المميز لديك */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* تنسيقات قسم المهارات (Skills Grid) */
+.skills-grid {
+    display: grid;
+    /* سيعرض 3 أعمدة على شاشات سطح المكتب وعمود واحد على الهواتف */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background-color: #1a1a1a; /* لون أغمق قليلاً من الخلفية السوداء */
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* تأثير بسيط عند التمرير */
+    border-color: #FFC107; 
+}
+
+.skill-card i {
+    font-size: 40px;
+    color: #FFC107; 
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #ccc;
+    font-size: 14px;
+}
 
 /* client form */
 .client-form-section{padding:40px 0}
