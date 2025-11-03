@@ -39,7 +39,12 @@ header {
   top: 0;
   z-index: 10;
 }
-
+header {
+  background: linear-gradient(to right, #ffcc00, #e31b23);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
 .logo {
   font-size: 1.2rem;
 }
