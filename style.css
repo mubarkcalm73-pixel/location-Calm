@@ -1,46 +1,65 @@
-/* 🌌 خلفية برمجية احترافية خفيفة */
-body {
-  background-color: #0d0d0d;
-  color: #fff;
-  font-family: "Cairo", sans-serif;
-  position: relative;
-  overflow-x: hidden;
+:root{
+  --yellow: #ffd400;
+  --red: #e63946;
+  --bg: #fffbe8;
+  --text: #222;
+  --muted: #666;
+  --card: #ffffff;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Cairo',system-ui, -apple-system, 'Segoe UI', Roboto,'Noto Sans Arabic',sans-serif;color:var(--text);background:var(--bg);}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.topbar{background:linear-gradient(90deg,var(--yellow),var(--red));color:#111}
+.topbar .container{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;font-size:1.2rem;color:#111;text-decoration:none}
+.nav a{margin:0 8px;color:#111;text-decoration:none}
+#themeToggle{background:transparent;border:1px solid rgba(0,0,0,0.08);padding:6px 8px;border-radius:8px;cursor:pointer}
+
+.hero{padding:40px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+.hero-card h1{font-size:1.8rem;margin:0 0 8px}
+.lead{color:var(--muted);margin-bottom:12px}
+.features{padding-left:0;list-style:none;margin:0 0 16px}
+.features li{padding:6px 0}
+.cta .btn{margin-right:8px}
+
+.id-card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.id-top{display:flex;align-items:center;gap:12px}
+.logo{background:linear-gradient(135deg,var(--red),var(--yellow));color:#111;width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900}
+.id-title{font-weight:700}
+.id-body p{margin:8px 0;color:var(--text)}
+.id-footer{margin-top:12px;padding-top:8px;border-top:1px dashed #eee;color:var(--muted)}
+
+.client h2,.blog h2{margin-top:0}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.form-grid label{display:block}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px}
+.form-grid .full{grid-column:1/-1}
+.form-actions{display:flex;gap:10px}
+
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;border:0;cursor:pointer}
+.btn.primary{background:var(--red);color:white}
+.btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.08)}
+
+.waiting{padding:40px 0;text-align:center}
+.waiting-card{display:inline-block;padding:20px;background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.spinner{width:50px;height:50px;border-radius:50%;border:6px solid rgba(0,0,0,0.06);border-top-color:var(--red);margin:0 auto 10px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.blog .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.post{background:var(--card);padding:16px;border-radius:12px}
+.post .meta{color:var(--muted);font-size:0.9rem}
+.readmore{display:inline-block;margin-top:8px}
+
+.site-footer{background:#111;color:#fff;padding:20px 0;margin-top:30px}
+.footer-grid{display:flex;justify-content:space-between;align-items:center}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .blog .posts{grid-template-columns:1fr}
 }
 
-/* تأثير الأكواد المتساقطة */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://i.pinimg.com/originals/f5/8c/7a/f58c7a9f2c3018bff5b773b5317c8f25.gif");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.08; /* شفافية بسيطة */
-  z-index: -1; /* خلف المحتوى */
-}
-
-/* محتوى الموقع */
-section, header, footer {
-  position: relative;
-  z-index: 10;
-}
-
-/* اللون الأساسي */
-h1, h2, h3, h4 {
-  color: #ff4747;
-}
-a, button {
-  background-color: #ff4747;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-a:hover, button:hover {
-  background-color: #ff3030;
-}
+/* dark mode */
+body.dark{--bg:#0f1720;--text:#e6eef8;--muted:#9fb0c7;--card:#0b1220}
