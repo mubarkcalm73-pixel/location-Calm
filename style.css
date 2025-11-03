@@ -19,17 +19,6 @@ body {
 
 /* ... باقي كود CSS ... */
 
-header {
-    position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-}
 
 header h1 {
     color: var(--main-color);
