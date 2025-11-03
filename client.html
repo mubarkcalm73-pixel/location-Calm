@@ -44,10 +44,13 @@
         <label class="field full">
           <span>نوع المشروع</span>
           <select name="type">
-            <option>موقع شخصي</option>
-            <option>متجر إلكتروني</option>
-            <option>صفحة هبوط</option>
-            <option>هوية رقمية</option>
+    <option value="" disabled selected>اختر نوع المشروع</option>
+    <option value="landing_page">صفحة هبوط (Landing Page)</option>
+    <option value="personal_portfolio">موقع شخصي/محفظة أعمال</option>
+    <option value="business_website">موقع شركة/خدمات</option>
+    <option value="ecommerce_small">متجر إلكتروني صغير (E-commerce)</option>
+    <option value="custom_app">تطبيق ويب مخصص</option>
+    <option value="other">أخرى</option>
           </select>
         </label>
 
@@ -60,7 +63,18 @@
           <button type="submit" class="btn primary">إرسال الطلب</button>
           <a href="index.html" class="btn ghost">عودة</a>
         </div>
+    <label for="budget">الميزانية المقترحة (اختياري)</label>
+    <select id="budget" name="budget">
+        <option value="" disabled selected>اختر نطاق ميزانيتك</option>
+        <option value="500-1000">500 - 1000 دولار</option>
+        <option value="1000-2500">1000 - 2500 دولار</option>
+        <option value="2500-5000">2500 - 5000 دولار</option>
+        <option value="5000+">أكثر من 5000 دولار</option>
+        <option value="not_sure">غير متأكد/قابل للنقاش</option>
+    </select>
+   </div>
       </form>
+
     </section>
   </main>
 
