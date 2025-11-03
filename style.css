@@ -1,127 +1,46 @@
+/* 🌌 خلفية برمجية احترافية خفيفة */
 body {
-  margin: 0;
-  font-family: 'Tajawal', sans-serif;
-  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
-              url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=1400&q=80') 
-              no-repeat center center fixed;
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: "Cairo", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* تأثير الأكواد المتساقطة */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i.pinimg.com/originals/f5/8c/7a/f58c7a9f2c3018bff5b773b5317c8f25.gif");
   background-size: cover;
-  color: #222;
-  transition: 0.3s;
+  background-position: center;
+  opacity: 0.08; /* شفافية بسيطة */
+  z-index: -1; /* خلف المحتوى */
 }
 
-header {
-  background: #ff4d4d;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* محتوى الموقع */
+section, header, footer {
+  position: relative;
+  z-index: 10;
 }
 
-header .logo {
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
+/* اللون الأساسي */
+h1, h2, h3, h4 {
+  color: #ff4747;
 }
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#mode-toggle {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #fff;
-}
-
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: rgba(255, 77, 77, 0.05);
-}
-
-.hero h2 {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.hero h2 span {
-  color: #ff4d4d;
-}
-
-.hero p {
-  font-size: 18px;
-  margin: 10px auto 30px;
-  color: #444;
-  max-width: 600px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.btn {
-  padding: 10px 25px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn.primary {
-  background: #ff4d4d;
-  color: #fff;
-}
-
-.btn.secondary {
-  border: 2px solid #ff4d4d;
-  color: #ff4d4d;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.services {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff;
-}
-
-.services h2 {
-  color: #ff4d4d;
-  font-size: 24px;
-}
-
-.service-cards {
-  display: grid;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 30px auto;
-}
-
-.card {
-  background: #fff7f7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-footer {
-  background: #ff4d4d;
+a, button {
+  background-color: #ff4747;
   color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover, button:hover {
+  background-color: #ff3030;
 }
