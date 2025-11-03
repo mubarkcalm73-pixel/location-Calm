@@ -26,6 +26,56 @@ header {
     align-items: center;
     padding: 10px 40px;
 }
+/* ... (داخل header) ... */
+
+/* زر القائمة - يظهر فقط على الجوال */
+#menu-toggle {
+    display: none; /* يتم إخفاؤه افتراضياً */
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* نمط القائمة على الجوال (Mobile Navigation) */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    #menu-toggle {
+        display: block; /* يظهر الزر في الشاشات الصغيرة */
+    }
+
+    #main-nav {
+        /* إعداد القائمة لتنزلق */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        height: 0; /* لإخفائها */
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+    }
+
+    #main-nav.open {
+        /* تظهر عند التفعيل عبر JavaScript */
+        height: 220px; /* اضبط الارتفاع حسب عدد الروابط */
+        padding: 10px 0;
+    }
+
+    #main-nav a {
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+}
 
 header h1 {
     color: var(--main-color);
