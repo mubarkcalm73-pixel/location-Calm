@@ -294,3 +294,11 @@ button:hover {
     inset: 0;
     z-index: -1;
 }
+/* ... (في نهاية ملف CSS) ... */
+
+/* تنسيق التركيز على الإدخالات */
+input:focus, textarea:focus {
+    outline: none; /* إزالة التركيز الافتراضي */
+    border: 2px solid var(--main-color); /* إضافة لون الثيم */
+    box-shadow: 0 0 8px rgba(var(--main-color-rgb, 13, 110, 253), 0.5); /* إضافة ظل خفيف */
+    }
