@@ -87,6 +87,16 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     /* ... */
 }
+.service-card:hover {
+    border-color: var(--main-color); 
+    transform: translateY(-8px); /* زيادة حركة الارتفاع */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* ظل أعمق */
+}
+
+.skill {
+    /* ... خصائص ... */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل ثابت لعمق أكبر */
+}
 
 .service-card i {
     color: var(--main-color);
@@ -118,6 +128,23 @@ section {
 
 .blog-card h3 {
     color: var(--main-color);
+    /* ... */
+}
+.blog-card {
+    /* ... خصائص ... */
+    /* إضافة تدرج على الصورة لجعل النص أوضح */
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card img {
+    /* ... خصائص ... */
+    transition: transform 0.5s; 
+}
+
+.blog-card h3, .blog-card p {
+    position: relative; /* لضمان ظهور النص فوق الصورة */
+    z-index: 1;
     /* ... */
 }
 
