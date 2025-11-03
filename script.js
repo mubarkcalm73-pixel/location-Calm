@@ -97,7 +97,18 @@ if (savedColor) {
 // 3.2. معالج حدث تغيير اللون
 picker.addEventListener("input", (e) => {
     const newColor = e.target.value;
-    
+// ===================================
+// 4. التنقل السلس (Smooth Scrolling)
+// ===================================
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});    
     // تطبيق اللون الجديد على متغير CSS
     document.documentElement.style.setProperty("--main-color", newColor);
     
