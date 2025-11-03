@@ -1,34 +1,108 @@
-// animations simple
-document.addEventListener('DOMContentLoaded', function(){
-  // fade in sections
-  document.querySelectorAll('.section, .main-header').forEach((el, i)=>{
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(14px)';
-    setTimeout(()=> {
-      el.style.transition = 'all 700ms cubic-bezier(.22,.9,.32,1)';
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0)';
-    }, 120 + i*150);
-  });
+// ===================================
+// 1. رسوم الخلفية المتحركة (Particle Animation)
+// ===================================
+const canvas = document.getElementById("bg-animation");
+const ctx = canvas.getContext("2d");
 
-  // contact form
-  const form = document.getElementById('contactForm');
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const mail = 'your-email@example.com'; // <-- ضع بريدك هنا أيضاً
-      if(!name || !email || !message){
-        document.getElementById('formMsg').textContent = 'يرجى تعبئة كل الحقول.';
-        return;
-      }
-      const subject = encodeURIComponent('رسالة من موقعك — ' + name);
-      const body = encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\n\nالرسالة:\n${message}`);
-      // فتح تطبيق البريد الافتراضي
-      window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
-      document.getElementById('formMsg').textContent = 'يتم فتح تطبيق البريد...';
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+// تعريف فئة الجزيئات (Particle Class)
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        // سرعة أفقية (بين -0.5 و 0.5)
+        this.sx = Math.random() - 0.5; 
+        // سرعة عمودية (بين -0.5 و 0.5)
+        this.sy = Math.random() - 0.5; 
+        this.u(); // تحديث الموقع الأولي
+    }
+
+    // تحديث موقع الجزيء
+    u() {
+        this.x += this.sx;
+        this.y += this.sy;
+
+        // ارتداد الجزيء عند الوصول إلى حافة الشاشة
+        if (this.x < 0 || this.x > canvas.width) {
+            this.sx *= -1;
+        }
+        if (this.y < 0 || this.y > canvas.height) {
+            this.sy *= -1;
+        }
+    }
+
+    // رسم الجزيء
+    d() {
+        ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+        ctx.beginPath();
+        // رسم دائرة بنصف قطر 2
+        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2); 
+        ctx.fill();
+    }
+}
+
+// إنشاء 100 جزيء
+let ps = [];
+for (let i = 0; i < 100; i++) {
+    ps.push(new Particle());
+}
+
+// حلقة الرسوم المتحركة الرئيسية
+(function a() {
+    // مسح الشاشة لإعادة رسم الجزيئات
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    
+    // تحديث ورسم كل جزيء
+    ps.forEach(p => {
+        p.u();
+        p.d();
     });
-  }
+
+    // طلب الإطار التالي للحركة
+    requestAnimationFrame(a);
+})();
+
+// ===================================
+// 2. التحكم بصوت النقر
+// ===================================
+
+const clickSound = document.getElementById("click-sound");
+
+// تشغيل الصوت عند النقر في أي مكان (مع الأخذ في الاعتبار قيود المتصفح على التشغيل التلقائي)
+document.addEventListener("click", () => {
+    clickSound.currentTime = 0;
+    // إضافة .catch لمنع الأخطاء في حال منع المتصفح تشغيل الصوت
+    clickSound.play().catch(e => console.log("Click sound blocked by browser:", e)); 
 });
+
+// ===================================
+// 3. لوحة منتقي الألوان (Theme Picker)
+// ===================================
+
+const picker = document.getElementById("color-picker");
+
+// 3.1. تطبيق اللون المحفوظ عند التحميل
+const savedColor = localStorage.getItem("main-color");
+if (savedColor) {
+    document.documentElement.style.setProperty("--main-color", savedColor);
+    picker.value = savedColor;
+}
+
+// 3.2. معالج حدث تغيير اللون
+picker.addEventListener("input", (e) => {
+    const newColor = e.target.value;
+    
+    // تطبيق اللون الجديد على متغير CSS
+    document.documentElement.style.setProperty("--main-color", newColor);
+    
+    // حفظ اللون في التخزين المحلي
+    localStorage.setItem("main-color", newColor);
+});
+
+// ===================================
