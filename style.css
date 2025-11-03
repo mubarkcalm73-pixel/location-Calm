@@ -195,6 +195,33 @@ section {
     border-radius: 10px;
     font-weight: bold;
 }
+/* في ملف style.css - ضمن قسم .skills */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* زيادة المسافة بين المهارات */
+    margin-top: 2.5rem; /* زيادة المسافة عن العنوان */
+}
+
+.skill {
+    background: var(--card-bg); /* الخلفية الشفافة */
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px; /* شكل مستطيل أكثر حدة */
+    font-weight: bold;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* إضافة حدود خفيفة */
+    transition: 0.3s;
+    cursor: default; /* لجعلها تبدو كمعلومات وليست أزرار */
+}
+
+.skill:hover {
+    background: var(--main-color); /* تغيير الخلفية للون الثيم عند المرور */
+    color: var(--bg-color); /* جعل النص داكناً ليظهر على لون الثيم */
+    transform: translateY(-3px) scale(1.05); /* حركة خفيفة للأعلى والتكبير */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* إضافة ظل */
+}
 
 /* قسم الأعمال (Gallery) */
 .gallery {
@@ -380,6 +407,42 @@ section {
 /* **الكود الجديد لتأثير الكتابة** */
 @keyframes blink {
     50% { border-color: transparent; }
+}
+/* في ملف style.css - أضف هذا الجزء الجديد */
+
+.service-container {
+    display: grid;
+    /* 3 أعمدة في الشاشات الكبيرة، عمود واحد في الشاشات الصغيرة */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    border: 2px solid transparent; /* حدود شفافة لـ hover */
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.service-card:hover {
+    border-color: var(--main-color); /* إظهار الحدود بلون الثيم */
+    transform: translateY(-5px); /* رفع البطاقة للأعلى */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .typed-text {
