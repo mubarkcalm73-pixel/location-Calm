@@ -1,49 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحة العميل - إعلانات ممولة</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>طلب تصميم — Mubark/Calm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header>
-    <h1>إعلانات ممولة</h1>
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="client.html" class="active">العميل</a>
-      <a href="waiting.html">انتظار</a>
-    </nav>
-    <button id="mode-toggle">🌙</button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-logo">MC</div>
+        <div class="brand-name"><span class="ar">مبارك كالم</span><span class="en">Mubark/Calm</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="client.html">العميل</a>
+        <button id="themeToggle2" class="icon-btn" aria-label="تبديل الوضع">🌙</button>
+      </nav>
+    </div>
   </header>
 
-  <main class="client-section">
-    <h2>نموذج طلب الإعلان</h2>
-    <form class="client-form">
-      <input type="text" placeholder="اسمك الكامل" required>
-      <input type="email" placeholder="بريدك الإلكتروني" required>
-      <textarea placeholder="تفاصيل الإعلان المطلوب" required></textarea>
-      <button type="submit" class="btn">إرسال الطلب</button>
-    </form>
+  <main class="container">
+    <section class="client-form-section">
+      <h1 class="form-title">طلب تصميم</h1>
+      <form id="requestForm" class="client-form" autocomplete="off">
+        <label class="field">
+          <span>الاسم الكامل</span>
+          <input name="name" type="text" required placeholder="الاسم الكامل">
+        </label>
 
-    <div class="contact-info">
-      <h3>يمكنك أيضًا التواصل معنا مباشرة عبر:</h3>
-      <p><strong>البريد:</strong> MubarkCalm73@gmail.com</p>
-      <p><strong>الواتساب:</strong> +253 77053644</p>
+        <label class="field">
+          <span>البريد الإلكتروني</span>
+          <input name="email" type="email" required placeholder="you@example.com">
+        </label>
 
-      <div class="buttons">
-        <a href="mailto:MubarkCalm73@gmail.com" class="btn email">📧 إرسال بريد</a>
-        <a href="https://wa.me/25377053644" target="_blank" class="btn whatsapp">📱 فتح واتساب</a>
-      </div>
-    </div>
+        <label class="field">
+          <span>رقم الهاتف</span>
+          <input name="phone" type="tel" required placeholder="+253 ...">
+        </label>
+
+        <label class="field full">
+          <span>نوع المشروع</span>
+          <select name="type">
+            <option>موقع شخصي</option>
+            <option>متجر إلكتروني</option>
+            <option>صفحة هبوط</option>
+            <option>هوية رقمية</option>
+          </select>
+        </label>
+
+        <label class="field full">
+          <span>ملاحظات</span>
+          <textarea name="notes" rows="5" placeholder="نبذة قصيرة عن المشروع"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">إرسال الطلب</button>
+          <a href="index.html" class="btn ghost">عودة</a>
+        </div>
+      </form>
+    </section>
   </main>
 
-  <footer>
-    <p>© جميع الحقوق محفوظة Mubark Calm7</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-foot">Mubark/Calm</div>
+        <div class="small">© <span id="year2"></span></div>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:MubarkCalm73@gmail.com">📧</a>
+        <a href="https://wa.me/25377053644">📱</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
