@@ -494,6 +494,59 @@ section {
     background: white;
     color: var(--main-color);
 }
+/* في ملف style.css - تطوير .blog-cards و .blog-card */
+
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* زيادة المسافة قليلاً */
+    margin-top: 3rem;
+}
+
+.blog-card {
+    background: var(--card-bg);
+    padding: 0; /* إزالة الـ padding لتبدأ الصورة من الحافة */
+    border-radius: 10px;
+    overflow: hidden; /* إخفاء أي شيء يخرج عن حواف البطاقة */
+    text-decoration: none; /* إزالة خطوط الروابط */
+    color: var(--text-color);
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s; /* إضافة حركة على الصورة داخل البطاقة */
+}
+
+/* التنسيق الداخلي للمحتوى */
+.blog-card h3, .blog-card p {
+    padding: 0 1rem;
+}
+
+.blog-card h3 {
+    color: var(--main-color);
+    margin-top: 1rem;
+}
+
+.blog-card p {
+    font-size: 0.95rem;
+    padding-bottom: 1rem;
+}
+
+/* تأثير التفاعل (Hover Effect) */
+.blog-card:hover {
+    transform: translateY(-8px); /* حركة قوية للأعلى */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* حركة الصورة داخل البطاقة عند الـ hover */
+.blog-card:hover img {
+    transform: scale(1.05); /* تكبير الصورة عند المرور */
+}
 
 .typed-text {
     border-right: 2px solid white;
