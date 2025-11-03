@@ -1,145 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>مُبارك كالم — مصمم مواقع</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مصمم مواقع - مبارك كالم</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container">
-      <a class="brand" href="#">مُبارك كالم</a>
-      <nav class="nav">
-        <a href="#home">الرئيسية</a>
-        <a href="#client">العميل</a>
-        <a href="#blog">المدونة</a>
-        <button id="themeToggle" aria-label="تبديل الوضع">🌙/☀️</button>
-      </nav>
-    </div>
+  <header>
+    <h1 class="logo">🚀 مبارك كالم - مصمم مواقع</h1>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#client">العميل</a>
+      <a href="#blog">المدونة</a>
+    </nav>
+    <button id="theme-toggle">🌙</button>
   </header>
 
-  <main>
-    <!-- الصفحة الرئيسية -->
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-card">
-          <h1>تصميم مواقع احترافي 💡🚀</h1>
-          <p class="lead">نحو حضور إلكتروني قوي — تصميم متجاوب، أداء سريع، وهوية رقمية مميّزة.</p>
-          <ul class="features">
-            <li>هوية مفصّلة وقوية (بطاقة تعريف متقدمة)</li>
-            <li>توافق جوال وكمبيوتر</li>
-            <li>خانات مميزة ومتطورة</li>
-          </ul>
-          <div class="cta">
-            <a class="btn primary" href="#client">أطلب تصميم</a>
-            <a class="btn ghost" href="#blog">اطّلع على المدونة</a>
-          </div>
-        </div>
+  <section id="home" class="section fade-in">
+    <h2>مرحباً بك في عالمي البرمجي 💡</h2>
+    <p>أنا مصمم مواقع محترف أصنع لك واجهات مميزة بلغة الجمال والإبداع.</p>
+    <button class="cta">✨ اطلب تصميمك الآن</button>
+  </section>
 
-        <aside class="id-card">
-          <div class="id-top">
-            <div class="logo">MC</div>
-            <div class="id-title">مُبارك كالم</div>
-          </div>
-          <div class="id-body">
-            <p><strong>المهنة:</strong> مصمم مواقع احترافي</p>
-            <p><strong>التخصص:</strong> تصميم واجهات، هوية رقمية، متاجر إلكترونية</p>
-            <p><strong>البريد:</strong> <a href="mailto:MubarkCalm73@gmail.com">📧 MubarkCalm73@gmail.com</a></p>
-            <p><strong>الهاتف:</strong> <a href="tel:+25377053644">📱 +253 77053644 (واتس متاح)</a></p>
-          </div>
-          <div class="id-footer">هوية رقمية قوية — جاهزة للعرض</div>
-        </aside>
-      </div>
-    </section>
+  <section id="identity" class="card fade-in">
+    <h3>بطاقة التعريف</h3>
+    <p><strong>الاسم:</strong> مبارك كالم</p>
+    <p><strong>البريد:</strong> <a href="mailto:MubarkCalm73@gmail.com">📧 MubarkCalm73@gmail.com</a></p>
+    <p><strong>الواتساب:</strong> <a href="https://wa.me/25377053644">📱 +253 77053644</a></p>
+  </section>
 
-    <!-- صفحة العميل -->
-    <section id="client" class="client container">
-      <h2>صفحة العميل — أرسل طلبك</h2>
-      <p class="muted">املأ النموذج أدناه وسنبدأ بالتواصل. بعد الإرسال ستنتقل لصفحة الإنتظار.</p>
+  <section id="client" class="section fade-in">
+    <h2>نموذج العميل</h2>
+    <form id="clientForm">
+      <input type="text" placeholder="اسمك الكامل" required>
+      <input type="email" placeholder="بريدك الإلكتروني" required>
+      <textarea placeholder="صف مشروعك بإيجاز"></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
 
-      <form id="clientForm" class="form-grid" autocomplete="off">
-        <label>الاسم الكامل
-          <input required name="name" type="text" placeholder="مثال: محمد علي">
-        </label>
+  <section id="waiting" class="section hidden fade-in">
+    <h2>جاري معالجة طلبك...</h2>
+    <div class="loader"></div>
+    <p>يرجى الانتظار قليلاً ⏳</p>
+  </section>
 
-        <label>البريد الإلكتروني
-          <input required name="email" type="email" placeholder="you@example.com">
-        </label>
+  <section id="blog" class="section fade-in">
+    <h2>📚 المدونة</h2>
+    <article>
+      <h3>كيف تختار مصمم موقعك المثالي؟</h3>
+      <p>اختيار المصمم هو أول خطوة لنجاح مشروعك الرقمي. إليك أهم المعايير...</p>
+    </article>
+  </section>
 
-        <label>رقم الهاتف
-          <input required name="phone" type="tel" placeholder="+253 ...">
-        </label>
-
-        <label class="full">نوع المشروع
-          <select name="type">
-            <option>موقع شخصي</option>
-            <option>متجر إلكتروني</option>
-            <option>صفحة هبوط</option>
-            <option>هوية رقمية كاملة</option>
-          </select>
-        </label>
-
-        <label class="full">وصف المطلب
-          <textarea name="desc" rows="5" placeholder="أخبرنا بما تحتاجه... 💡🚀"></textarea>
-        </label>
-
-        <div class="form-actions full">
-          <button type="submit" class="btn primary">أرسل الطلب</button>
-          <button type="reset" class="btn ghost">إعادة</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- صفحة الانتظار (مخفية افتراضياً) -->
-    <section id="waiting" class="waiting container hidden">
-      <h2>شكرًا! طلبك قيد المعالجة ⏳</h2>
-      <p>تم استلام بياناتك. سنراجع الطلب ونتواصل عبر البريد أو الواتس آب في أقرب وقت.</p>
-      <div class="waiting-card">
-        <div class="spinner" aria-hidden></div>
-        <p>حالة الطلب: قيد المراجعة</p>
-        <a id="backToHome" class="btn ghost" href="#home">العودة للرئيسية</a>
-      </div>
-    </section>
-
-    <!-- المدونة -->
-    <section id="blog" class="blog container">
-      <h2>المدونة الاحترافية</h2>
-      <div class="posts">
-        <article class="post">
-          <h3>نصائح لتسريع موقعك</h3>
-          <p class="meta">💡 5 دقائق للقراءة — 12 أغسطس 2025</p>
-          <p>تعرف على طرق بسيطة لتقليل زمن تحميل الصفحة وتحسين تجربة الزوار.</p>
-          <a class="readmore" href="#">اقرأ المزيد →</a>
-        </article>
-
-        <article class="post">
-          <h3>كيف تختار ألوان العلامة التجارية</h3>
-          <p class="meta">🎨 7 دقائق — 3 سبتمبر 2025</p>
-          <p>الألوان الصفراء والحمراء قوية لجذب الانتباه — لكن يجب استخدامها بحذر.</p>
-          <a class="readmore" href="#">اقرأ المزيد →</a>
-        </article>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>مُبارك كالم</strong>
-        <p>مصمم مواقع — هوية رقمية — واجهات احترافية</p>
-      </div>
-      <div>
-        <p>📧 <a href="mailto:MubarkCalm73@gmail.com">MubarkCalm73@gmail.com</a></p>
-        <p>📱 <a href="tel:+25377053644">+253 77053644</a></p>
-      </div>
-    </div>
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة لمبارك كالم.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
