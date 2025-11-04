@@ -58,3 +58,20 @@
     });
   }
 })();
+<script>
+  const btn = document.getElementById('themeToggle');
+
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    localStorage.setItem('mubark_theme', isLight ? 'light' : 'dark');
+  });
+
+  // عند فتح الصفحة نتأكد من حفظ الوضع السابق
+  window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('mubark_theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  });
+</script>
