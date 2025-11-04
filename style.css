@@ -1,221 +1,228 @@
-/* إعداد عام */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap');
+/* style.css — تصميم مطابق للصور (موبايل أولًا) */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
+:root{
+  --red-500: #ff5a5a;     /* أزرار وحروف حمراء فاتحة */
+  --red-600: #f64646;
+  --accent-orange: #ff7a3d; /* تدرج الهيرو */
+  --dark: #0f0f10;         /* خلفية سوداء بالهيرو */
+  --cream: #fff8f6;        /* خلفية صافية فاتحة */
+  --card-pink: #fff0f0;    /* بطاقات الخدمات */
+  --yellow: #ffd23f;       /* زر أصفر */
+  --muted: #9b9b9c;        /* نص ثانوي */
 }
 
-body {
-  background-color: #fff;
-  color: #111;
-  direction: rtl;
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Cairo', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  direction:rtl;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
 }
 
-/* الشريط العلوي */
-.navbar {
-  background-color: #b10000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+/* ---------- NAVBAR (يدعم كلا الصيغتين .nav و .navbar) ---------- */
+.navbar, .nav {
+  width:100%;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  z-index:40;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 700;
+/* Gradient top bar (كما في الصورة — أحمر إلى برتقالي) */
+.header-gradient{
+  background: linear-gradient(90deg, #ff4e4e 0%, #ff7a3d 50%, #ffc07a 100%);
+  color: #fff;
 }
 
-.navbar nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
-  transition: 0.3s;
+/* Brand / logo */
+.logo, .brand {
+  font-weight:700;
+  font-size:20px;
+  color:#fff;
+  letter-spacing:0.6px;
 }
 
-.navbar nav a:hover {
-  color: #ffdede;
+/* navigation links (mobile centered row or inline) */
+.navbar nav, .nav nav {
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.navbar nav a, .nav nav a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+  opacity:0.95;
 }
 
-/* الصفحة الرئيسية */
+/* make nav compact on small screens (stacked centered menu like image 6/7) */
+@media (max-width:520px){
+  .navbar, .nav { padding:14px; }
+  .navbar nav, .nav nav {
+    gap:12px;
+  }
+}
+
+/* ---------- HERO - أول شاشة (الغالبية في الصور تبي هيرو داكن + زر أصفر) ---------- */
 .hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #b10000, #8b0000);
-  color: white;
+  padding:38px 18px 60px;
+  text-align:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.0));
 }
 
-.hero h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
+/* variant: dark hero (كما بالصورة التي بها خلفية سوداء) */
+.hero--dark{
+  background: var(--dark);
+  color: #fff;
+  padding:48px 18px 64px;
 }
 
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
+/* headline in hero */
+.hero h1, .hero h2 {
+  font-size:28px;
+  margin:6px 0 12px;
+  font-weight:700;
+  line-height:1.1;
 }
 
+/* sub text */
+.hero p, .hero .lead {
+  color: #e9e9ea;
+  font-size:16px;
+  max-width:760px;
+  margin:0 auto 22px;
+  opacity:0.95;
+}
+
+/* CTA row */
+.cta {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+/* buttons */
 .btn {
-  background-color: white;
-  color: #b10000;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 22px;
+  border-radius:36px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  border:none;
+  transition:transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.btn:hover {
-  background-color: #ffdede;
-  color: #8b0000;
+/* primary yellow on dark hero (كما في الصورة) */
+.btn--primary {
+  background: linear-gradient(180deg, var(--yellow), #f7c943);
+  color: var(--dark);
+  font-size:16px;
+  min-width:170px;
 }
 
-/* النموذج (صفحة العميل) */
-.client-form {
-  max-width: 600px;
-  margin: 80px auto;
-  background-color: #fff3f3;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(177, 0, 0, 0.2);
+/* secondary red outline like "تعرف أكثر" */
+.btn--outline {
+  background:transparent;
+  color:var(--red-600);
+  border:2px solid rgba(255,90,90,0.18);
+  padding:10px 20px;
 }
 
-.client-form h2 {
-  text-align: center;
-  color: #b10000;
-  margin-bottom: 25px;
+/* hover scale */
+.btn:hover{ transform: translateY(-3px); }
+
+/* ---------- SERVICES / CARDS (البطاقات الوردية بزوايا كبيرة) ---------- */
+.section {
+  max-width:980px;
+  margin:30px auto;
+  padding:10px 18px 40px;
 }
 
-.client-form label {
-  display: block;
-  margin: 10px 0 5px;
-  font-size: 18px;
+.section-title{
+  text-align:center;
+  font-size:24px;
+  color:var(--red-600);
+  margin:18px 0 22px;
+  font-weight:700;
 }
 
-.client-form input,
-.client-form textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  margin-bottom: 15px;
+/* card grid */
+.cards {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
 }
 
-.client-form textarea {
-  height: 120px;
-  resize: none;
+/* card style */
+.card {
+  background:var(--card-pink);
+  border-radius:18px;
+  padding:28px 20px;
+  box-shadow: 0 8px 24px rgba(177,0,0,0.06);
+  text-align:center;
 }
 
-.client-form .btn {
-  display: block;
-  width: 100%;
-  text-align: center;
+/* card heading */
+.card h3 {
+  margin:0 0 10px;
+  color:var(--dark);
+  font-size:20px;
+  font-weight:700;
 }
 
-/* صفحة الانتظار */
-.loading-page {
-  background-color: #b10000;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* card body */
+.card p{
+  color: #6b6b6b;
+  font-size:15px;
+  line-height:1.8;
 }
 
-.loader {
-  border: 6px solid #fff;
-  border-top: 6px solid #ffcccc;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1.2s linear infinite;
-  margin-bottom: 20px;
+/* on wider screens show two/three columns */
+@media (min-width:720px){
+  .cards { grid-template-columns:repeat(2,1fr); }
+}
+@media (min-width:1000px){
+  .cards { grid-template-columns:repeat(3,1fr); }
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* ---------- WHY / LIST section (النقاط مع فواصل كما في الصورة) ---------- */
+.points {
+  max-width:900px;
+  margin:18px auto 36px;
+  padding:12px 18px;
+  background:transparent;
+}
+.points .item{
+  padding:18px 0;
+  border-top:1px solid rgba(0,0,0,0.05);
+  color:var(--dark);
+  font-size:18px;
+  text-align:center;
 }
 
-/* صفحة البطاقة التعريفية */
-.about {
-  max-width: 800px;
-  margin: 100px auto;
-  text-align: center;
-  background: #fff3f3;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(177, 0, 0, 0.2);
-}
-
-.about h2 {
-  color: #b10000;
-  margin-bottom: 20px;
-  font-size: 32px;
-}
-
-.about p {
-  font-size: 20px;
-  margin-bottom: 15px;
-  line-height: 1.8;
-}
-
-.contact a {
-  color: #b10000;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* المدونة */
+/* ---------- BLOG PREVIEW (مقالات مختصرة) ---------- */
 .blog {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 20px;
+  max-width:900px;
+  margin:24px auto;
+  padding:0 18px 48px;
 }
-
-.blog h2 {
-  color: #b10000;
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 34px;
-}
-
-.blog article {
-  background-color: #fff3f3;
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(177, 0, 0, 0.15);
-}
-
-.blog article h3 {
-  color: #b10000;
-  margin-bottom: 10px;
-  font-size: 22px;
-}
-
-.blog article p {
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-/* الفوتر */
-footer {
-  background-color: #8b0000;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
-  font-size: 16px;
-  border-top: 4px solid #b10000;
-}
+.blog article{
+  background:#fff
