@@ -27,8 +27,10 @@ html,body{height:100%;margin:0;font-family:'Tajawal',system-ui,-apple-system,'Se
     font-size: 2.2rem; /* تم تكبيره */
     margin-bottom: 0;
 }
-.hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;padding:46px 0}
-.headline{font-size:1.9rem;margin:0 0 10px}
+.hero .headline {
+    font-size: 2.2rem; /* هذا هو التكبير المطلوب */
+    margin-bottom: 0;
+}
 .subtitle{color:var(--muted);margin:0 0 18px}
 .hero-cta{display:flex;gap:12px;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-weight:700}
