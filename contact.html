@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تواصل / طلب — MubarkCalm7</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container header-flex">
+      <div class="left-controls">
+        <button id="themeToggleContact" class="theme-toggle" aria-label="تبديل الوضع">🌙</button>
+      </div>
+
+      <div class="brand">
+        <div class="brand-name">MubarkCalm7</div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">خدماتنا</a>
+        <a href="contact.html" class="active">تواصل / طلب</a>
+      </nav>
+
+      <div class="contact-pill">
+        <a href="mailto:MubarkCalm73@gmail.com">MubarkCalm73@gmail.com</a>
+        <a class="wa" href="https://wa.me/25377053644" target="_blank">+253 77053644</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="center form-section">
+      <div class="container small-card">
+        <h2>نموذج طلب تصميم موقع</h2>
+
+        <form id="contactForm" class="form-grid" novalidate>
+          <label>
+            الاسم الكامل
+            <input type="text" name="name" id="name" placeholder="أدخل اسمك الكامل" required>
+          </label>
+
+          <label>
+            البريد الإلكتروني
+            <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+          </label>
+
+          <label>
+            رقم الهاتف (واتساب)
+            <input type="tel" name="phone" id="phone" placeholder="+25377053644" required>
+          </label>
+
+          <label>
+            نوع الموقع
+            <select name="type" id="type" required>
+              <option value="">اختر نوع الموقع</option>
+              <option>موقع تعريفي</option>
+              <option>متجر إلكتروني</option>
+              <option>مدونة</option>
+              <option>خدمة/آخر</option>
+            </select>
+          </label>
+
+          <label class="full">
+            تفاصيل المشروع
+            <textarea name="details" id="details" rows="5" placeholder="اكتب وصفًا مختصرًا عن المشروع..." ></textarea>
+          </label>
+
+          <div class="form-actions full">
+            <button type="submit" class="btn btn-primary">أرسل الطلب</button>
+            <a href="index.html" class="btn btn-outline">إلغاء</a>
+          </div>
+
+          <p class="muted full">أو تواصل مباشرة عبر: <a href="mailto:MubarkCalm73@gmail.com">MubarkCalm73@gmail.com</a> — <a href="https://wa.me/25377053644" target="_blank">+253 77053644</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© جميع الحقوق محفوظة Mubark Calm7</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
