@@ -184,6 +184,21 @@ html,body{height:100%;margin:0;font-family:'Tajawal',system-ui,-apple-system,'Se
 .field.full{grid-column:1/-1}
 input,select,textarea{padding:10px;border-radius:10px;border:1px solid #e6e6e6;font-family:inherit}
 .form-actions{grid-column:1/-1;display:flex;gap:10px;justify-content:flex-start;margin-top:6px}
+/* تنسيق الخانة الجديدة لنداء العمل (Call to Action) */
+.client-form .call-to-action-box {
+    background-color: #333; /* لون خلفية داكن مميز */
+    border: 1px solid #ffcc00; /* إطار بلون أصفر/ذهبي لافت */
+    padding: 15px;
+    margin-bottom: 20px; /* مسافة تحت الخانة */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.client-form .call-to-action-box h4 {
+    color: #ffcc00; /* لون الخط أصفر/ذهبي */
+    font-size: 1.2rem;
+    margin: 0;
+}
 
 /* waiting */
 .waiting-page{display:flex;align-items:center;justify-content:center;padding:60px 0}
