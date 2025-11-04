@@ -89,8 +89,29 @@ body.light{
 .container{max-width:var(--container);margin:0 auto;padding:20px}
 .header-flex{display:flex;align-items:center;gap:12px;justify-content:space-between}
 
-/* ===== Topbar ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  background: linear-gradient(to left, #1a1a1a, #111);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px); /* تأثير زجاجي جميل */
+}
 
+body {
+  margin: 0;
+  padding-top: 0; /* ما نحتاج padding لأن sticky يحافظ على الترتيب */
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 /* Left controls (زر الوضع) */
 .left-controls{margin-right:auto;display:flex;align-items:center}
 .theme-toggle{
