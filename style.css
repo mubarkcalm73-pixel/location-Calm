@@ -37,7 +37,54 @@ header nav a:hover,
 header nav a.active {
   text-decoration: underline;
 }
+/* قسم الخدمات */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* توسيط أفقي */
+  justify-content: center; /* توسيط عمودي */
+  gap: 20px;
+  padding: 60px 0;
+  text-align: center;
+}
 
+.services h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.services h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff0000, #b30000);
+  border-radius: 5px;
+}
+
+.service-card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  font-size: 1.1em;
+  line-height: 1.7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3);
+}
 /* ====== القسم الرئيسي ====== */
 .hero {
   display: flex;
