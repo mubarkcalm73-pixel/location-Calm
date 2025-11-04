@@ -22,7 +22,60 @@ body{
   direction: rtl;
   transition: background .25s ease, color .25s ease;
 }
+/* تنسيق الشريط العلوي */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #f3f3f3;
+}
 
+/* القائمة العلوية */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e63946; /* الأحمر الفاتح */
+}
+
+/* قسم التواصل */
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ff4d4d25;
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1px solid #ff4d4d;
+}
+
+.contact-box .phone {
+  background: #ff4d4d;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 18px;
+  font-size: 15px;
+}
+
+.contact-box .email {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
 /* ===== Theme: Default dark (يمكن تغييره عبر .light) ===== */
 body { background: linear-gradient(180deg,var(--dark-bg),#070707); color:var(--text-light); }
 
