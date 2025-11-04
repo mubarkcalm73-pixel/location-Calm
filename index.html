@@ -1,233 +1,126 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mubark/Calm - تصميم مواقع</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
     body {
+      font-family: 'Tajawal', sans-serif;
       margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background-color: #fff;
-      color: #222;
-      transition: background-color 0.3s, color 0.3s;
+      background: #fff;
+      transition: background 0.3s, color 0.3s;
     }
-
     header {
-      background-color: #ff4d4d;
+      background: #ff5a5a;
       color: white;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
+    header h1 {
+      margin: 0;
+      font-size: 20px;
     }
-
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 10px;
       font-weight: bold;
     }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .mode-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: white;
-    }
-
-    .hero {
-      background-color: #fff0f0;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .hero h1 {
-      color: #d10000;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .buttons button {
-      padding: 10px 20px;
-      border-radius: 25px;
-      border: 2px solid #ff4d4d;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.3s;
-    }
-
-    .buttons .start {
-      background-color: #ff4d4d;
-      color: white;
-    }
-
-    .buttons .start:hover {
-      background-color: #d10000;
-    }
-
-    .buttons .learn {
-      background-color: white;
-      color: #ff4d4d;
-    }
-
-    .buttons .learn:hover {
-      background-color: #fff5f5;
-    }
-
-    section {
-      padding: 50px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #d10000;
-      margin-bottom: 20px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .card {
-      background-color: #fff5f5;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    footer {
-      background-color: #ff4d4d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.95rem;
-    }
-
-    /* الوضع الليلي */
-    .dark {
-      background-color: #121212;
-      color: #f5f5f5;
-    }
-
-    .dark header {
-      background-color: #b30000;
-    }
-
-    .dark nav a {
+    .dark-mode {
+      background: #222;
       color: #fff;
     }
-
-    .dark .hero {
-      background-color: #1e1e1e;
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
     }
-
-    .dark .card {
-      background-color: #2a2a2a;
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff5f5;
     }
-
-    .dark .buttons .learn {
-      background-color: #1a1a1a;
-      color: #ff4d4d;
+    .hero h2 {
+      color: #ff5a5a;
+      font-size: 26px;
     }
-
-    .dark .buttons .start {
-      background-color: #d10000;
+    .hero p {
+      color: #444;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons a {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 5px;
+      font-weight: bold;
+    }
+    .start-btn {
+      background: #ff5a5a;
+      color: #fff;
+    }
+    .info-btn {
+      border: 2px solid #ff5a5a;
+      color: #ff5a5a;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer {
+      background: #ff5a5a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Mubark/Calm</div>
+    <h1>تصميم مواقع</h1>
     <nav>
-      <a href="#home">الرئيسية</a>
+      <a href="#">الرئيسية</a>
       <a href="#services">الخدمات</a>
-      <a href="#contact">تواصل</a>
+      <a href="#contact">تواصل معنا</a>
     </nav>
-    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+    <button class="toggle-btn" onclick="toggleDark()">🌙</button>
   </header>
 
-  <section class="hero" id="home">
-    <h1>مرحباً بك في موقع تصميم المواقع</h1>
-    <p>نساعدك على تحويل أفكارك إلى موقع احترافي متجاوب وسريع.<br> نصمم مواقع تجمع بين الجمال والسرعة والتقنيات الحديثة.</p>
+  <div class="hero">
+    <h2>مرحباً بك في موقع تصميم المواقع</h2>
+    <p>نصمم لك موقعاً احترافياً وسريعاً يعكس هوية عملك ويساعدك على النمو والانتشار في الإنترنت.</p>
     <div class="buttons">
-      <button class="start">ابدأ الآن</button>
-      <button class="learn">تعرّف أكثر</button>
+      <a href="order.html" class="start-btn">ابدأ الآن</a>
+      <a href="#services" class="info-btn">تعرف أكثر</a>
     </div>
-  </section>
+  </div>
 
   <section id="services">
-    <h2>خدماتنا</h2>
-    <div class="services">
-      <div class="card">
-        <h3>💻 تصميم مواقع احترافية</h3>
-        <p>نصمم واجهات جذابة وسهلة الاستخدام تناسب جميع الأجهزة.</p>
-      </div>
-      <div class="card">
-        <h3>⚙️ تطوير المواقع</h3>
-        <p>نبرمج مواقع سريعة وآمنة باستخدام أحدث التقنيات.</p>
-      </div>
-      <div class="card">
-        <h3>🖌️ تجربة المستخدم UX/UI</h3>
-        <p>نُحسّن تجربة الزوار ليبقى موقعك مميزاً وسهل الاستخدام.</p>
-      </div>
-      <div class="card">
-        <h3>🌐 تحسين محركات البحث (SEO)</h3>
-        <p>نساعد موقعك على الظهور في نتائج البحث الأولى.</p>
-      </div>
-    </div>
+    <h2 style="color:#ff5a5a;">خدماتنا</h2>
+    <p>نقدم تصميم وتطوير مواقع احترافية، تحسين تجربة المستخدم، تهيئة SEO، ودعم فني متواصل.</p>
   </section>
 
   <section id="contact">
-    <h2>تواصل معنا</h2>
-    <p>📧 البريد الإلكتروني: <strong>MubarkCalm73@gmail.com</strong></p>
-    <p>📱 رقم الهاتف: <strong>+253 77053644</strong></p>
+    <h2 style="color:#ff5a5a;">تواصل معنا</h2>
+    <p>البريد: <strong>MubarkCalm73@gmail.com</strong></p>
+    <p>واتساب: <strong>+253 77053644</strong></p>
   </section>
 
-  <footer>
-    جميع الحقوق محفوظة © 2025 Mubark/Calm - مصمم مواقع
-  </footer>
+  <footer>© جميع الحقوق محفوظة Mubark/Calm</footer>
 
   <script>
-    function toggleMode() {
-      document.body.classList.toggle("dark");
+    function toggleDark() {
+      document.body.classList.toggle('dark-mode');
     }
   </script>
 </body>
