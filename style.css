@@ -23,7 +23,10 @@ html,body{height:100%;margin:0;font-family:'Tajawal',system-ui,-apple-system,'Se
 .main-nav a{color:#111;text-decoration:none;font-weight:700;padding:8px;border-radius:8px}
 .icon-btn{background:transparent;border:0;padding:8px;font-size:1.1rem;cursor:pointer}
 
-/* hero */
+.hero .headline {
+    font-size: 2.2rem; /* تم تكبيره */
+    margin-bottom: 0;
+}
 .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;padding:46px 0}
 .headline{font-size:1.9rem;margin:0 0 10px}
 .subtitle{color:var(--muted);margin:0 0 18px}
