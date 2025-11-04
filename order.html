@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>طلب تصميم موقع - MubarkCalm7</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="logo">تصميم مواقع</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">خدماتنا</a>
+        <a href="why.html">لماذا تختارنا؟</a>
+        <a href="order.html" class="btn-outline">طلب تصميم</a>
+      </nav>
+      <div class="corner-name">MubarkCalm7</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-section">
+      <h2>نموذج طلب تصميم موقع</h2>
+      <form id="orderForm" class="order-form">
+        <label>الاسم الكامل
+          <input type="text" name="name" required />
+        </label>
+
+        <label>البريد الإلكتروني
+          <input type="email" name="email" required />
+        </label>
+
+        <label>رقم الهاتف
+          <input type="tel" name="phone" required />
+        </label>
+
+        <label>نوع الموقع المطلوب
+          <select name="siteType" required>
+            <option value="">اختر نوع الموقع</option>
+            <option>موقع تعريفي (شركة/فردي)</option>
+            <option>متجر إلكتروني</option>
+            <option>مدونة/محتوى</option>
+            <option>خدمة/أخرى</option>
+          </select>
+        </label>
+
+        <label>وصف مختصر للمشروع
+          <textarea name="description" rows="5" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">أرسل الطلب</button>
+          <a href="index.html" class="btn-outline">إلغاء</a>
+        </div>
+
+        <p class="small">بعد الإرسال سنتواصل معك عبر البريد أو الواتساب: <a href="https://wa.me/25377053644" target="_blank">+253 77053644</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>جميع الحقوق محفوظة © Mubark Calm7</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
