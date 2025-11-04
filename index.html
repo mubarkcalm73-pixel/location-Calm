@@ -1,343 +1,234 @@
-!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>موقعي الاحترافي</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Mubark/Calm - تصميم مواقع</title>
   <style>
-    :root {
-      --main-color: #0d6efd;
-      --bg-color: #0a0a0a;
-      --text-color: #fff;
-      --card-bg: rgba(255, 255, 255, 0.1);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
     body {
       margin: 0;
-      font-family: "Cairo", sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
+      font-family: 'Cairo', sans-serif;
+      background-color: #fff;
+      color: #222;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     header {
-      position: fixed;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      z-index: 9999;
+      background-color: #ff4d4d;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 40px;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header h1 {
-      color: var(--main-color);
-      font-size: 1.6rem;
- font-size-size
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
     }
+
     nav a {
       color: white;
-      margin: 0 10px;
       text-decoration: none;
+      margin: 0 10px;
       font-weight: bold;
-      transition: 0.3s;
     }
 
     nav a:hover {
-      color: var(--main-color);
+      text-decoration: underline;
+    }
+
+    .mode-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: white;
+    }
+
+    .hero {
+      background-color: #fff0f0;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      color: #d10000;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: 2px solid #ff4d4d;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .buttons .start {
+      background-color: #ff4d4d;
+      color: white;
+    }
+
+    .buttons .start:hover {
+      background-color: #d10000;
+    }
+
+    .buttons .learn {
+      background-color: white;
+      color: #ff4d4d;
+    }
+
+    .buttons .learn:hover {
+      background-color: #fff5f5;
     }
 
     section {
-      padding: 100px 40px;
-      min-height: 100vh;
-    }
-
-    .home {
-      background: linear-gradient(135deg, #0d6efd33, #000);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 50px 20px;
       text-align: center;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .home h2 {
-      font-size: 3rem;
+    h2 {
+      color: #d10000;
+      margin-bottom: 20px;
     }
 
-    .home p {
-      max-width: 600px;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    .cta {
-      margin-top: 1rem;
-      background: var(--main-color);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .cta:hover {
-      background: white;
-      color: var(--main-color);
-    }
-
-    /* قسم من أنا */
-    .about, .services, .projects, .blog, .contact {
-      background: #111;
-      border-top: 1px solid #222;
-    }
-
-    .section-title {
-      text-align: center;
-      color: var(--main-color);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .skill {
-      background: var(--card-bg);
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    /* المشاريع */
-    .gallery {
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
     }
 
-    .project {
-      position: relative;
-      cursor: pointer;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .project img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .project:hover {
-      transform: scale(1.05);
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: 0.3s;
-    }
-
-    .project:hover .overlay {
-      opacity: 1;
-    }
-
-    /* المدونة */
-    .blog-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .blog-card {
-      background: var(--card-bg);
+    .card {
+      background-color: #fff5f5;
       padding: 1rem;
-      border-radius: 10px;
-      transition: 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
     }
 
-    .blog-card:hover {
+    .card:hover {
       transform: translateY(-5px);
     }
 
-    /* التواصل */
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-      margin: auto;
-      gap: 1rem;
-    }
-
-    input, textarea, button {
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-    }
-
-    button {
-      background: var(--main-color);
+    footer {
+      background-color: #ff4d4d;
       color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background: white;
-      color: var(--main-color);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95rem;
     }
 
-    /* إعدادات المظهر */
-    #theme-panel {
-      position: fixed;
-      left: 10px;
-      bottom: 10px;
-      background: rgba(255,255,255,0.1);
-      padding: 1rem;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      color: white;
-      z-index: 9999;
-      font-size: 14px;
+    /* الوضع الليلي */
+    .dark {
+      background-color: #121212;
+      color: #f5f5f5;
     }
 
-    #color-picker {
-      margin-top: 0.5rem;
-      cursor: pointer;
+    .dark header {
+      background-color: #b30000;
     }
 
-    #bg-animation {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
+    .dark nav a {
+      color: #fff;
+    }
+
+    .dark .hero {
+      background-color: #1e1e1e;
+    }
+
+    .dark .card {
+      background-color: #2a2a2a;
+    }
+
+    .dark .buttons .learn {
+      background-color: #1a1a1a;
+      color: #ff4d4d;
+    }
+
+    .dark .buttons .start {
+      background-color: #d10000;
     }
   </style>
 </head>
 <body>
-  <canvas id="bg-animation"></canvas>
-
   <header>
-    <h1>موقعي الاحترافي</h1>
+    <div class="logo">Mubark/Calm</div>
     <nav>
       <a href="#home">الرئيسية</a>
-      <a href="#about">من أنا</a>
       <a href="#services">الخدمات</a>
-      <a href="#projects">الأعمال</a>
-      <a href="#blog">المدونة</a>
       <a href="#contact">تواصل</a>
     </nav>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
   </header>
 
-  <section id="home" class="home">
-    <h2>أهلاً، أنا <span style="color:var(--main-color)">مطور الويب</span></h2>
-    <p>أبني مواقع حديثة وتفاعلية باستخدام HTML, CSS, JavaScript.</p>
-    <a href="#projects" class="cta">شاهد أعمالي</a>
-  </section>
-
-  <section id="about" class="about">
-    <h2 class="section-title">من أنا</h2>
-    <p style="text-align:center;max-width:600px;margin:auto;">
-      أنا مطور واجهات أمامية متخصص في بناء تجارب مستخدم مذهلة، وأسعى دائماً لتعلم أحدث التقنيات.
-    </p>
-    <div class="skills">
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">React</div>
-    </div>
-  </section>
-      <div class="skill">تحسين تجربة المستخدم</div>
-      <div class="skill">بناء صفحات تفاعلية</div>
-      <div class="skill">تحسين الأداء والسرعة</div>
+  <section class="hero" id="home">
+    <h1>مرحباً بك في موقع تصميم المواقع</h1>
+    <p>نساعدك على تحويل أفكارك إلى موقع احترافي متجاوب وسريع.<br> نصمم مواقع تجمع بين الجمال والسرعة والتقنيات الحديثة.</p>
+    <div class="buttons">
+      <button class="start">ابدأ الآن</button>
+      <button class="learn">تعرّف أكثر</button>
     </div>
   </section>
 
-  <section id="projects" class="projects">
-    <h2 class="section-title">الأعمال</h2>
-    <div class="gallery">
-      <div class="project">
-        <img src="https://picsum.photos/400/250?1" alt="">
-        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+  <section id="services">
+    <h2>خدماتنا</h2>
+    <div class="services">
+      <div class="card">
+        <h3>💻 تصميم مواقع احترافية</h3>
+        <p>نصمم واجهات جذابة وسهلة الاستخدام تناسب جميع الأجهزة.</p>
       </div>
-      <div class="project">
-        <img src="https://picsum.photos/400/250?2" alt="">
-        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      <div class="card">
+        <h3>⚙️ تطوير المواقع</h3>
+        <p>نبرمج مواقع سريعة وآمنة باستخدام أحدث التقنيات.</p>
       </div>
-      <div class="project">
-        <img src="https://picsum.photos/400/250?3" alt="">
-        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      <div class="card">
+        <h3>🖌️ تجربة المستخدم UX/UI</h3>
+        <p>نُحسّن تجربة الزوار ليبقى موقعك مميزاً وسهل الاستخدام.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 تحسين محركات البحث (SEO)</h3>
+        <p>نساعد موقعك على الظهور في نتائج البحث الأولى.</p>
       </div>
     </div>
   </section>
 
-  <section id="blog" class="blog">
-    <h2 class="section-title">المدونة</h2>
-    <div class="blog-cards">
-      <div class="blog-card">
-        <h3>أفضل نصائح لتصميم الويب</h3>
-        <p>تعلم كيف تجعل موقعك جذاباً وسريع الاستجابة.</p>
-      </div>
-      <div class="blog-card">
-        <h3>لماذا يجب أن تتعلم JavaScript</h3>
-        <p>لغة المستقبل في تطوير الويب التفاعلي.</p>
-      </div>
-    </div>
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>📧 البريد الإلكتروني: <strong>MubarkCalm73@gmail.com</strong></p>
+    <p>📱 رقم الهاتف: <strong>+253 77053644</strong></p>
   </section>
 
-  <section id="contact" class="contact">
-    <h2 class="section-title">تواصل معي</h2>
-    <form>
-      <input type="text" placeholder="الاسم الكامل" required>
-      <input type="email" placeholder="البريد الإلكتروني" required>
-      <textarea rows="5" placeholder="رسالتك"></textarea>
-      <button type="submit">إرسال</button>
-    </form>
-  </section>
-
-  <div id="theme-panel">
-    <h4>🎨 تخصيص المظهر</h4>
-    <input type="color" id="color-picker" value="#0d6efd"></div>
-     <audio id="click-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5ce3ad6c7c.mp3?filename=click-124467.mp3" preload="auto"></audio>
+  <footer>
+    جميع الحقوق محفوظة © 2025 Mubark/Calm - مصمم مواقع
+  </footer>
 
   <script>
-    // خلفية متحركة
-    const canvas = document.getElementById("bg-animation");
-    const ctx = canvas.getContext("2d");
-    function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
-    resize(); addEventListener("resize", resize);
-    class Particle {
-      constructor() { this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.s=Math.random()*2+1; this.sx=Math.random()-0.5; this.sy=Math.random()-0.5;}
-      u(){this.x+=this.sx;this.y+=this.sy;if(this.x<0||this.x>canvas.width)this.sx*=-1;if(this.y<0||this.y>canvas.height)this.sy*=-1;}
-      d(){ctx.fillStyle="rgba(255,255,255,0.8)";ctx.beginPath();ctx.arc(this.x,this.y,this.s,0,Math.PI*2);ctx.fill();}
+    function toggleMode() {
+      document.body.classList.toggle("dark");
     }
-    let ps=[];for(let i=0;i<100;i++)ps.push(new Particle());
-    (function a(){ctx.clearRect(0,0,canvas.width,canvas.height);ps.forEach(p=>{p.u();p.d();});requestAnimationFrame(a);})();
-
-    // صوت عند النقر
-    const cs=document.getElementById("click-sound");
-    document.addEventListener("click",()=>{cs.currentTime=0;cs.play();});
-
-    // لوحة الألوان
-    const picker=document.getElementById("color-picker");
-    picker.addEventListener("input",e=>{
-      const c=e.target.value;
-      document.documentElement.style.setProperty("--main-color",c);
-      localStorage.setItem("main-color",c);
-    });
-    const sc=localStorage.getItem("main-color");
-    if(sc){document.documentElement.style.setProperty("--main-color",sc);picker.value=sc;}
   </script>
 </body>
 </html>
