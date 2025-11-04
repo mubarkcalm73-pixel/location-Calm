@@ -4,91 +4,57 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>طلب تصميم — Mubark/Calm</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <div class="brand-logo">MC</div>
-        <div class="brand-name"><span class="ar">مبارك كالم</span><span class="en">Mubark/Calm</span></div>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">الرئيسية</a>
-        <a href="client.html">العميل</a>
-        <button id="themeToggle2" class="icon-btn" aria-label="تبديل الوضع">🌙</button>
-      </nav>
+  <header class="hero" style="min-height:18vh;padding:18px 20px;">
+    <nav class="nav" style="max-width:1100px;margin:auto;">
+      <div class="brand">Mubark/Calm</div>
+      <ul class="menu">
+        <li><a href="index.html">الرئيسية</a></li>
+      </ul>
+    </nav>
+    <div style="max-width:1100px;margin:auto;color:#fff;padding-top:6px;">
+      <h2>نموذج طلب تصميم</h2>
     </div>
   </header>
 
   <main class="container">
-    <section class="client-form-section">
-      <h1 class="form-title">طلب تصميم</h1>
-      <form id="requestForm" class="client-form" action="https://formspree.io/f/xjkpqpza" method="POST" autocomplete="off">
-        <label class="field">
-          <span>الاسم الكامل</span>
-   <input name="name" type="text" required>
-        </label>
+    <div class="form-wrap">
+      <form id="clientForm">
+        <label>اسم العميل</label>
+        <input class="input" name="name" required placeholder="الاسم الكامل">
 
-        <label class="field">
-          <span>البريد الإلكتروني</span>
-        <input name="email" type="email" required>
-        </label>
+        <label>البريد الإلكتروني</label>
+        <input class="input" name="email" type="email" placeholder="example@mail.com">
 
-        <label class="field">
-          <span>رقم الهاتف</span>
-        <textarea name="notes" rows="5" placeholder="اكتب هنا عن فكرة المشروع، الجمهور المستهدف، وأي مواقع تعجبك"></textarea>
-        </label>
+        <label>رقم الهاتف</label>
+        <input class="input" name="phone" placeholder="+2537...">
 
-        <label class="field full">
-          <span>نوع المشروع</span>
-          <select name="type">
-    <option value="" disabled selected>اختر نوع المشروع</option>
-    <option value="landing_page">صفحة هبوط (Landing Page)</option>
-    <option value="personal_portfolio">موقع شخصي/محفظة أعمال</option>
-    <option value="business_website">موقع شركة/خدمات</option>
-    <option value="ecommerce_small">متجر إلكتروني صغير (E-commerce)</option>
-    <option value="custom_app">تطبيق ويب مخصص</option>
-    <option value="other">أخرى</option>
-          </select>
-        </label>
+        <label>نوع الموقع المطلوب</label>
+        <select name="type" class="input">
+          <option>موقع شخصي</option>
+          <option>متجر إلكتروني</option>
+          <option>صفحة تعريفية / بطاقة</option>
+          <option>مدونة</option>
+        </select>
 
-        <label class="field full">
-          <span>ملاحظات</span>
-          <textarea name="notes" rows="5" placeholder="نبذة قصيرة عن المشروع"></textarea>
-        </label>
+        <label>وصف المشروع / الملاحظات</label>
+        <textarea name="details" rows="6" placeholder="اكتب احتياجاتك هنا..."></textarea>
 
-        <div class="form-actions">
-          <button type="submit" class="btn primary">إرسال الطلب</button>
-          <a href="index.html" class="btn ghost">عودة</a>
+        <div style="display:flex;gap:12px;justify-content:flex-start;margin-top:12px;">
+          <button class="btn" type="submit">أرسل الطلب</button>
+          <a class="btn ghost" href="index.html">إلغاء</a>
         </div>
-    <label for="budget">الميزانية المقترحة (اختياري)</label>
-    <select id="budget" name="budget">
-        <option value="" disabled selected>اختر نطاق ميزانيتك</option>
-        <option value="500-1000">500 - 1000 دولار</option>
-        <option value="1000-2500">1000 - 2500 دولار</option>
-        <option value="2500-5000">2500 - 5000 دولار</option>
-        <option value="5000+">أكثر من 5000 دولار</option>
-        <option value="not_sure">غير متأكد/قابل للنقاش</option>
-    </select>
-   </div>
       </form>
 
-    </section>
+      <p class="small">بعد الإرسال سيظهر لك صفحة انتظار ثم ستصلك رسالة تأكيد.</p>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="brand-foot">Mubark/Calm</div>
-        <div class="small">© <span id="year2"></span></div>
-      </div>
-      <div class="footer-right">
-        <a href="mailto:MubarkCalm73@gmail.com">📧</a>
-        <a href="https://wa.me/25377053644">📱</a>
-      </div>
-    </div>
+  <footer class="footer">
+    <p>© Mubark/Calm</p>
   </footer>
 
   <script src="script.js"></script>
