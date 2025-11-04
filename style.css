@@ -22,14 +22,27 @@ body{
   direction: rtl;
   transition: background .25s ease, color .25s ease;
 }
-/* تنسيق الشريط العلوي */
+/* ===== تنسيق الشريط العلوي الثابت ===== */
 header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
+  background: var(--dark-surface);
   padding: 15px 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* للوضع الفاتح */
+body.light header {
+  background: #fff;
   border-bottom: 2px solid #f3f3f3;
 }
 
