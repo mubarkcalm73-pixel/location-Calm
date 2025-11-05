@@ -1,1 +1,5 @@
-
+body {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url("images/mubark-calm.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
