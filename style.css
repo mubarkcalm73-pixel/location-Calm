@@ -1,7 +1,10 @@
+
+/* في ملف style.css */
 body {
-  background-image: url('images/Libra-fridom.jpg_20251106_135339_0000.png');
-  background-size: cover;       /* تغطي كل الشاشة */
-  background-repeat: no-repeat; /* بدون تكرار */
-  background-position: center;  /* في المنتصف */
-  background-attachment: fixed; /* ثابتة عند التمرير */
+    /* استبدل اسم الملف الحالي (الذي يبدو غير مكتمل) بالاسم الكامل الجديد */
+    background-image: url('images/Libra-fridom.jpg_20251106_135339_0000.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
