@@ -9,22 +9,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-        font-family: 'Cairo', sans-serif;
-        margin: 0;
-        /* يمكنك إزالة background: #fff; إذا كنت تريد أن تظهر الصورة دائمًا */
-        background: #fff; 
-        transition: background 0.3s, color;
-        
-        /* ⬅️ أضف الخصائص التالية للخلفية 🖼️ */
-        background-image: url('images/Libra-fridom.jpg_20251106_135339_0000.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
+    /* داخل وسم <style> في ملف index.html */
+body {
+    /* ... الخصائص الموجودة سابقاً ... */
     
-    /* ... بقية الستايلات الأخرى ... */
+    /* ⬅️ عدّل السطر background-image بهذا الشكل 🎨 */
+    body {
+    /* ... الخصائص الموجودة سابقاً ... */
+    
+    /* ⬅️ أضف لون النص هنا ✍️ */
+    color: white; 
+    
+    background-image: 
+        /* طبقة سوداء شفافة (نسبة شفافية 30% هنا) */
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+        /* ثم صورتك (الاسم الكامل والدقيق) */
+        url('images/Libra-fridom.jpg_20251106_135339_0000.png'); /* ⬅️ يجب أن ينتهي هنا بالفاصلة المنقوطة (;) */
+        
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    }
+  
   </style>
   
     header {
