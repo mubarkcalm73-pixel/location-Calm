@@ -8,29 +8,26 @@
   <!-- استيراد الخط -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-     body {
+ <style>
+ body {
     font-family: 'Cairo', sans-serif;
-     margin: 0;
-    /* **احذف** هذا السطر: background: #fff; */ 
+    margin: 0;
     transition: background 0.3s, color;
-
-        /* ⬅️ ابدأ الإضافة من هنا 🖼️ */
-        
-        color: white; /* لجعل النص أبيض */
-        
-        background-image: 
-            /* طبقة التظليل الحمراء */
-            linear-gradient(to bottom, rgba(255, 0, 0, 0.7), rgba(180, 0, 0, 0.7)), 
-            /* مسار الصورة */
-            url('images/SAVE_20251106_023017.jpg');
-            
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
     
+    /* ⬅️ يجب إضافة لون النص الأبيض (color: white) لضمان وضوح الكتابة على الخلفية الداكنة ✍️ */
+    color: white; 
+    
+    /* ⬅️ عدل خاصية background-image لتشمل مسار الصورة فقط 🖼️ */
+    background-image: url('images/SAVE_20251106_023017.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header { 
+
     header {
       background: #ff5a5a;
       color: white;
@@ -154,26 +151,15 @@
   <header>
     <h1>تصميم مواقع</h1>
     <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="why-choose-us.html">لماذا تختارنا</a>
-        <a href="services.html">خدماتنا</a>
-        <a href="contact.html">اتصل بنا</a>
+      <a href="#">الرئيسية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#contact">تواصل</a>
     </nav>
-    <nav>
-    <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        
-        <li><a href="why-choose-us.html">لماذا تختارنا</a></li>
-        
-        <li><a href="about.html">من نحن</a></li>
-        <li><a href="contact.html">اتصل بنا</a></li>
-    </ul>
-    </nav>
-    
+    <button class="toggle-btn" onclick="toggleDark()">🌙</button>
   </header>
 
   <div class="hero">
-    <h2> مرحباً بك في موقع CALM لتصميم أفخم المواقع </h2>
+    <h2>مرحباً بك في موقع CALM لتصميم أفخم المواقع</h2>
     <p>نصمم لك موقعاً احترافياً وسريعاً يعكس هوية عملك ويساعدك على الظهور والتطور في عالم الإنترنت.</p>
     <div class="buttons">
       <a href="order.html" class="start-btn">ابدأ الآن</a>
