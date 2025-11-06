@@ -1,10 +1,25 @@
-
-/* في ملف style.css */
 body {
-    /* استبدل اسم الملف الحالي (الذي يبدو غير مكتمل) بالاسم الكامل الجديد */
-    background-image: url('images/Libra-fridom.jpg_20251106_135339_0000.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  color: white;
+  transition: background 0.3s, color 0.3s;
+  background-image: url('images/SAVE_20251106_023017.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+}
+
+/* 🌹 الطبقة الحمراء الشفافة فوق الخلفية */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 90, 90, 0.35); /* ← هنا قوة اللون، خفيفة واحترافية */
+  z-index: -1; /* حتى لا تغطي النصوص */
 }
