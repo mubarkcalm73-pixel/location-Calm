@@ -98,3 +98,46 @@ body::before {
 .view-btn:hover {
   background: #ff7676;
 }
+.reviews {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reviews h2 {
+  color: #ff4d4d;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+}
+
+.review-text {
+  color: #fff;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.review-card h3 {
+  color: #ff6666;
+  font-weight: 600;
+}
