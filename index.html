@@ -9,41 +9,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* داخل وسم <style> في ملف index.html */
-
-   body {
-    /* ... الخصائص الموجودة سابقاً ... */
-    /* ⬅️ عدّل السطر background-image بهذا الشكل 🎨 */
-    /* ⬅️ أضف لون النص هنا ✍️ */
-    color: white; 
-    
-    background-image: 
-        /* طبقة سوداء شفافة (نسبة شفافية 30% هنا) */
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-        /* ثم صورتك (الاسم الكامل والدقيق) */
-        url('images/Libra-fridom.jpg_20251106_135339_0000.png'); /* ⬅️ يجب أن ينتهي هنا بالفاصلة المنقوطة (;) */
-        
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    /* إعدادات عامة */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
     }
-  
-  </style>
-  
+
+    body {
+      color: white;
+      background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url('images/SAVE_20251106_023017.jpg'); /* ← هنا اسم الصورة التي رفعتها */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* الوضع الليلي */
+    .dark-mode {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('images/SAVE_20251106_023017.jpg');
+      color: #eee;
+    }
+
     header {
-      background: #ff5a5a;
+      background: rgba(255, 90, 90, 0.9);
       color: white;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 22px;
       font-weight: 700;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -51,53 +59,66 @@
       font-weight: 600;
       font-size: 15px;
     }
-    .toggle-btn {
-      background: SAVE_20251106_023017.jpg
 
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-btn {
+      background: none;
       border: none;
       color: white;
       font-size: 22px;
       cursor: pointer;
     }
-    .dark-mode {
-      background: #222;
-      color: #fff;
-    }
+
     .hero {
       text-align: center;
-      padding: 70px 20px;
-      background: #fff5f5;
+      padding: 100px 20px;
     }
+
     .hero h2 {
       color: #ff5a5a;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
+
     .hero p {
-      color: #444;
-      font-size: 17px;
+      color: #ddd;
+      font-size: 18px;
       line-height: 1.8;
       max-width: 600px;
       margin: auto;
     }
+
     .buttons {
       margin-top: 25px;
     }
+
     .buttons a {
       text-decoration: none;
-      padding: 10px 22px;
+      padding: 10px 25px;
       border-radius: 10px;
       margin: 5px;
       font-weight: 600;
       font-size: 15px;
+      transition: 0.3s;
     }
+
     .start-btn {
       background: #ff5a5a;
       color: #fff;
     }
+
     .info-btn {
       border: 2px solid #ff5a5a;
+      color: #ff5a5a;
+      background: transparent;
+    }
+
+    .buttons a:hover {
+      background: white;
       color: #ff5a5a;
     }
 
@@ -105,14 +126,16 @@
       text-align: center;
       padding: 60px 20px;
     }
+
     section h2 {
       color: #ff5a5a;
       font-size: 26px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-weight: 700;
     }
+
     section p {
-      color: #555;
+      color: #eee;
       line-height: 1.7;
       max-width: 650px;
       margin: auto;
@@ -124,26 +147,32 @@
       gap: 20px;
       margin-top: 40px;
     }
+
     .service {
-      background: #fff5f5;
+      background: rgba(255, 255, 255, 0.1);
       padding: 20px;
       border-radius: 15px;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background 0.3s ease;
     }
+
     .service:hover {
       transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.25);
     }
+
     .service h3 {
       color: #ff5a5a;
       font-size: 18px;
+      margin-bottom: 10px;
     }
+
     .service p {
-      color: #333;
+      color: #eee;
       font-size: 15px;
     }
 
     footer {
-      background: #ff5a5a;
+      background: rgba(255, 90, 90, 0.9);
       color: white;
       text-align: center;
       padding: 15px;
@@ -151,9 +180,10 @@
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>تصميم مواقع</h1>
+    <h1>Mubark/Calm</h1>
     <nav>
       <a href="#">الرئيسية</a>
       <a href="#services">الخدمات</a>
@@ -163,47 +193,32 @@
   </header>
 
   <div class="hero">
-    <h2>مرحباً بك في موقع CALM لتصميم المواقع</h2>
-    <p>نصمم لك موقعاً احترافياً وسريعاً يعكس هوية عملك ويساعدك على الظهور والتطور في عالم الإنترنت.</p>
+    <h2>مرحباً بك في موقع Mubark/Calm لتصميم المواقع</h2>
+    <p>نصمم لك موقعاً احترافياً وسريعاً يعكس هوية عملك ويساعدك على التميز في عالم الإنترنت.</p>
     <div class="buttons">
-      <a href="order.html" class="start-btn">ابدأ الآن</a>
-      <a href="#services" class="info-btn">تعرف أكثر</a>
+      <a href="#services" class="start-btn">ابدأ الآن</a>
+      <a href="#contact" class="info-btn">تواصل معنا</a>
     </div>
   </div>
 
   <section id="services">
     <h2>خدماتنا</h2>
-    <p>نقدم حلولاً شاملة لتصميم المواقع، من الفكرة إلى التنفيذ، بدقة وأناقة تليق بعلامتك التجارية.</p>
-
     <div class="services">
       <div class="service">
         <h3>💻 تصميم مواقع احترافية</h3>
-        <p>نصمم واجهات حديثة ومتجاوبة مع جميع الأجهزة لترك انطباع مميز.</p>
+        <p>نصمم واجهات عصرية ومتجاوبة لجميع الأجهزة.</p>
       </div>
-
       <div class="service">
-        <h3>⚙️ تطوير مواقع مخصصة</h3>
-        <p>نطوّر حلولًا برمجية تناسب احتياجاتك وتجعل موقعك متفردًا.</p>
+        <h3>⚙️ تطوير مخصص</h3>
+        <p>ننشئ مواقع مخصصة تلائم مشروعك وأهدافك بدقة.</p>
       </div>
-
-      <div class="service">
-        <h3>🖌️ واجهات وتجربة المستخدم</h3>
-        <p>نمنح موقعك تجربة تصفح سهلة وبألوان متناسقة تعكس احترافك.</p>
-      </div>
-
       <div class="service">
         <h3>🔍 تحسين لمحركات البحث</h3>
-        <p>نزيد من ظهور موقعك في نتائج جوجل ليتعرف الناس عليك أكثر.</p>
+        <p>رفع ترتيب موقعك في نتائج Google للوصول إلى جمهور أوسع.</p>
       </div>
-
       <div class="service">
-        <h3>🧰 صيانة وتحديثات</h3>
-        <p>نقدم خدمات المراقبة والتحديث المستمر لأداء موقعك.</p>
-      </div>
-
-      <div class="service">
-        <h3>🌍 استضافة وربط نطاق</h3>
-        <p>نساعدك في استضافة موقعك وربطه بنطاقك الخاص بسهولة.</p>
+        <h3>🧰 صيانة وتحديث</h3>
+        <p>نحافظ على موقعك محدثًا وآمنًا بأداء ممتاز دائمًا.</p>
       </div>
     </div>
   </section>
@@ -214,7 +229,7 @@
     <p>📱 واتساب: <strong>+253 77053644</strong></p>
   </section>
 
-  <footer>© جميع الحقوق محفوظة Mubark/Calm</footer>
+  <footer>© جميع الحقوق محفوظة Mubark/Calm 2025</footer>
 
   <script>
     function toggleDark() {
