@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mubark/Calm - تصميم مواقع</title>
 
-  <!-- خط عربي جميل -->
+  <!-- الخط والأيقونات -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* 🌍 إعدادات عامة */
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
@@ -173,59 +170,78 @@
       font-size: 15px;
     }
 
-    /* 🌟 قسم لماذا تختارنا */
-    .why {
-      position: relative;
-      background: rgba(255, 255, 255, 0.07);
-      padding: 70px 20px;
-      border-radius: 25px;
-      margin: 60px auto;
-      width: 90%;
-      max-width: 1000px;
-      box-shadow: 0 0 25px rgba(255, 90, 90, 0.3);
-      overflow: hidden;
-    }
-
-    .why h2 {
-      color: #ff5a5a;
-      font-size: 30px;
-      margin-bottom: 25px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .why ul {
-      list-style: none;
-      padding: 0;
+    /* 🎴 البطاقة التعريفية */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
       text-align: center;
-      line-height: 2;
-      color: #fff;
-      font-size: 18px;
-      position: relative;
-      z-index: 2;
     }
 
-    .why li::before {
-      content: "⭐ ";
-      color: #ff5a5a;
-    }
-
-    /* ✨ دوائر مضيئة متحركة */
-    .glow {
-      position: absolute;
+    .about img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,90,90,0.6), transparent 70%);
-      animation: float 8s infinite ease-in-out;
-      z-index: 1;
+      object-fit: cover;
+      border: 3px solid #ff5a5a;
+      box-shadow: 0 0 15px rgba(255, 90, 90, 0.5);
     }
 
-    .glow:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 15%; animation-delay: 0s; }
-    .glow:nth-child(2) { width: 120px; height: 120px; bottom: 10%; right: 20%; animation-delay: 2s; }
-    .glow:nth-child(3) { width: 80px; height: 80px; top: 50%; right: 10%; animation-delay: 4s; }
+    .about-info h3 {
+      color: #ff5a5a;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); opacity: 0.7; }
-      50% { transform: translateY(-20px); opacity: 1; }
+    .about-info p {
+      font-size: 17px;
+      color: #f3f3f3;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    /* 📰 قسم المدونة */
+    .blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .post {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 90, 90, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .post:hover {
+      transform: translateY(-7px);
+    }
+
+    .post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 20px;
+    }
+
+    .post-content h3 {
+      color: #ff5a5a;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .post-content p {
+      color: #f0f0f0;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     footer {
@@ -237,7 +253,6 @@
       margin-top: 40px;
     }
 
-    /* 🌙 الوضع الليلي */
     .dark-mode {
       background-color: #111;
       color: #fff;
@@ -251,7 +266,8 @@
     <nav>
       <a href="#">الرئيسية</a>
       <a href="#services">الخدمات</a>
-      <a href="#why">لماذا نحن</a>
+      <a href="#about">من نحن</a>
+      <a href="#blog">المدونة</a>
       <a href="#contact">تواصل</a>
     </nav>
     <button class="toggle-btn" onclick="toggleDark()">🌙</button>
@@ -282,41 +298,55 @@
       </div>
 
       <div class="service">
-        <h3>🖌️ تجربة المستخدم المتميزة</h3>
-        <p>نجعل موقعك سهلاً وجميلاً بتصميمات متقنة الألوان.</p>
-      </div>
-
-      <div class="service">
         <h3>🔍 تحسين لمحركات البحث</h3>
         <p>نرفع موقعك في نتائج جوجل ليصل إليك جمهورك بسهولة.</p>
-      </div>
-
-      <div class="service">
-        <h3>🧰 صيانة وتحديثات</h3>
-        <p>نراقب موقعك باستمرار ونضمن أداءه العالي.</p>
-      </div>
-
-      <div class="service">
-        <h3>🌍 استضافة وربط نطاق</h3>
-        <p>نساعدك في نشر موقعك وربطه بنطاقك الخاص بثوانٍ.</p>
       </div>
     </div>
   </section>
 
-  <!-- ✨ قسم لماذا تختارنا -->
-  <section id="why" class="why">
-    <div class="glow"></div>
-    <div class="glow"></div>
-    <div class="glow"></div>
+  <!-- 🎴 البطاقة التعريفية -->
+  <section id="about">
+    <h2>من نحن</h2>
+    <div class="about">
+      <img src="images/mubark-calm.jpg" alt="Mubark/Calm">
+      <div class="about-info">
+        <h3>Mubark/Calm</h3>
+        <p>مصمم ومطور مواقع محترف. أعمل على تحويل الأفكار إلى مشاريع رقمية متكاملة، بتصاميم فريدة وسرعة أداء عالية.  
+        أسعى دائماً إلى جعل كل موقع يروي قصة نجاح بأسلوب أنيق واحترافي.</p>
+      </div>
+    </div>
+  </section>
 
-    <h2><i class="fa-solid fa-star"></i> لماذا تختارنا؟</h2>
-    <ul>
-      <li>نستخدم أحدث تقنيات الويب لضمان أداء سريع ومظهر جذاب.</li>
-      <li>نقدم دعم فني دائم واستشارات مجانية لعملائنا.</li>
-      <li>نصمم مواقع متوافقة مع الجوال وجميع الأجهزة.</li>
-      <li>نهتم بأدق التفاصيل لتجربة مستخدم مثالية.</li>
-      <li>نحول أفكارك إلى واقع رقمي أنيق وفعّال.</li>
-    </ul>
+  <!-- 📰 قسم المدونة -->
+  <section id="blog">
+    <h2>المدونة</h2>
+    <p>تابع أحدث المقالات والنصائح في عالم تصميم وتطوير المواقع.</p>
+
+    <div class="blog">
+      <div class="post">
+        <img src="images/blog1.jpg" alt="مقال 1">
+        <div class="post-content">
+          <h3>5 نصائح لتصميم موقع جذاب</h3>
+          <p>تعرف على أهم النصائح التي تجعل موقعك مميزاً ويجذب الزوار بسهولة بفضل التصميم المتناسق والتفاعل الذكي.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="images/blog2.jpg" alt="مقال 2">
+        <div class="post-content">
+          <h3>أهمية تجربة المستخدم (UX)</h3>
+          <p>تصميم تجربة المستخدم هو العامل الأساسي في نجاح أي موقع. اكتشف كيف تؤثر التفاصيل الصغيرة في انطباع الزائر.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="images/blog3.jpg" alt="مقال 3">
+        <div class="post-content">
+          <h3>أسرار سرعة المواقع الحديثة</h3>
+          <p>نعرض لك كيف يمكنك تحسين سرعة موقعك بأدوات وتقنيات حديثة لتحسين الأداء وتجربة التصفح.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
