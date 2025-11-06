@@ -23,3 +23,78 @@ body::before {
   background: rgba(255, 90, 90, 0.35); /* ← هنا قوة اللون، خفيفة واحترافية */
   z-index: -1; /* حتى لا تغطي النصوص */
 }
+#blog {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#blog h2 {
+  color: #ff5a5a;
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+#blog p {
+  color: #eee;
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.blog-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h3 {
+  color: #ff5a5a;
+  font-size: 18px;
+  margin: 15px 0 10px;
+}
+
+.blog-card p {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 15px;
+}
+
+.view-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #ff5a5a;
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.view-btn:hover {
+  background: #ff7676;
+}
