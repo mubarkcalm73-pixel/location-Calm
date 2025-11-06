@@ -7,15 +7,13 @@
     
     <link href="https://fonts.googleapis.com/css?family=Cairo:400,700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-
     <style>
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
             transition: background 0.3s, color;
 
-            /* ⬅️ خصائص الخلفية الحمراء بدون تظليل (حسب طلبك الأخير) */
+            /* الخلفية الحمراء بدون تظليل */
             color: white; 
             background-image: url('images/SAVE_20251106_023017.jpg');
             background-size: cover;
@@ -24,14 +22,14 @@
             background-attachment: fixed;
         }
 
-        /* ⬅️ أنصحك بإضافة ظل للنص لزيادة وضوحه على الصورة 💡 */
-        .hero h1, .hero p {
+        /* ظل للنص لزيادة وضوحه */
+        .why-container h2, .why-container h3, .why-container p {
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
 
-        /* ⬅️ خصائص الـ Header (للتنقل) */
+        /* خصائص الـ Header (للتنقل) */
         header {
-            background: #ff5a5a; /* لون أحمر زاهي */
+            background: #ff5a5a;
             color: white;
             padding: 10px 20px;
             display: flex;
@@ -50,7 +48,7 @@
             font-weight: 600;
         }
 
-        /* ⬅️ خصائص المحتوى الرئيسي لصفحة "لماذا" */
+        /* تنسيق المحتوى لصفحة لماذا */
         .why-container {
             max-width: 900px;
             margin: 50px auto;
@@ -79,16 +77,14 @@
             line-height: 1.6;
         }
         
-        /* ⬅️ خصائص الـ Footer (لتكرار الجزء السفلي) */
+        /* خصائص الـ Footer */
         footer {
             background: #ff5a5a;
             color: white;
             text-align: center;
             padding: 15px;
             font-size: 14px;
-            position: fixed; /* تثبيت في الأسفل */
-            bottom: 0;
-            width: 100%;
+            /* يمكن إزالة position: fixed لتظهر في أسفل المحتوى */
         }
 
     </style>
