@@ -21,7 +21,32 @@
       background-position: center;
       background-attachment: fixed;
     }
+.hero {
+  position: relative;
+  /* ✅ تم تغيير اسم الملف إلى الاسم الصحيح في المجلد 'images' */
+  background: url('images/SAVE_20251106_023017.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
 
+/* ✅ فلتر أحمر شفاف (يبقى كما هو) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.15); 
+  z-index: -1;
+}
+    
     header {
       background: rgba(255, 90, 90, 0.9);
       color: white;
