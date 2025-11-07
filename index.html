@@ -10,51 +10,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    .hero h1 {
-    /* التحكم في المسافة بين السطور */
-    line-height: 1.2; 
-    /* 1.2 قيمة جيدة، يمكنك تغييرها إلى 1.1 أو 1.3 حسب ما تراه مناسباً */
-    margin-bottom: 0.2em; /* تقليل المسافة أسفل العنوان */
-}
-
-.hero p {
-    /* تعديل المسافة بين السطور للنص العادي */
-    line-height: 1.5; 
-    /* قد تحتاج أيضاً لتعديل الهوامش العلوية والسفلية <margin> */
-}
-    
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
       color: white;
+      transition: background 0.3s, color 0.3s;
       background-image: url('images/SAVE_20251106_023017.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
     }
-.hero {
-  position: relative;
-  /* ✅ تم تغيير اسم الملف إلى الاسم الصحيح في المجلد 'images' */
-  background: url('images/SAVE_20251106_023017.jpg') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  z-index: 1;
-}
 
-/* ✅ فلتر أحمر شفاف (يبقى كما هو) */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 0, 0, 0.15); 
-  z-index: -1;
-}
-    
     header {
       background: rgba(255, 90, 90, 0.9);
       color: white;
@@ -98,6 +65,12 @@
       text-align: center;
       padding: 90px 20px;
       background: rgba(0, 0, 0, 0.55);
+      border-bottom: 3px solid #ff5a5a;
+    }
+
+    .hero h2 {
+      color: #ff5a5a;
+      font-size: 32px;
       font-weight: 700;
       margin-bottom: 10px;
     }
@@ -345,53 +318,37 @@
   </section>
 
   <!-- 📰 قسم المدونة -->
-<section id="blog">
-  <h2>أعمالنا الحديثة</h2>
-  <p>استعرض بعض المشاريع التي قمنا بتصميمها وتطويرها باحترافية عالية وجودة مميزة.</p>
+  <section id="blog">
+    <h2>المدونة</h2>
+    <p>تابع أحدث المقالات والنصائح في عالم تصميم وتطوير المواقع.</p>
 
-  <div class="blog-grid">
-    <div class="blog-card">
-      <img src="images/project1.jpg" alt="موقع شركة تقنية">
-      <h3>موقع شركة تقنية</h3>
-      <p>تصميم موقع متكامل يعرض خدمات الشركة ومنتجاتها بطريقة جذابة وسريعة التصفح.</p>
-      <a href="#" class="view-btn">عرض المشروع</a>
-    </div>
+    <div class="blog">
+      <div class="post">
+        <img src="images/blog1.jpg" alt="مقال 1">
+        <div class="post-content">
+          <h3>5 نصائح لتصميم موقع جذاب</h3>
+          <p>تعرف على أهم النصائح التي تجعل موقعك مميزاً ويجذب الزوار بسهولة بفضل التصميم المتناسق والتفاعل الذكي.</p>
+        </div>
+      </div>
 
-    <div class="blog-card">
-      <img src="images/project2.jpg" alt="موقع شخصي">
-      <h3>موقع شخصي</h3>
-      <p>موقع تعريفي بسيط وأنيق يبرز هوية الشخص وأعماله بخطوط وألوان متناسقة.</p>
-      <a href="#" class="view-btn">عرض المشروع</a>
-    </div>
+      <div class="post">
+        <img src="images/blog2.jpg" alt="مقال 2">
+        <div class="post-content">
+          <h3>أهمية تجربة المستخدم (UX)</h3>
+          <p>تصميم تجربة المستخدم هو العامل الأساسي في نجاح أي موقع. اكتشف كيف تؤثر التفاصيل الصغيرة في انطباع الزائر.</p>
+        </div>
+      </div>
 
-    <div class="blog-card">
-      <img src="images/project3.jpg" alt="متجر إلكتروني">
-      <h3>متجر إلكتروني</h3>
-      <p>تصميم متجر إلكتروني متكامل مع نظام سلة الشراء وخيارات الدفع السهلة.</p>
-      <a href="#" class="view-btn">عرض المشروع</a>
+      <div class="post">
+        <img src="images/blog3.jpg" alt="مقال 3">
+        <div class="post-content">
+          <h3>أسرار سرعة المواقع الحديثة</h3>
+          <p>نعرض لك كيف يمكنك تحسين سرعة موقعك بأدوات وتقنيات حديثة لتحسين الأداء وتجربة التصفح.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<!-- قسم آراء العملاء -->
-<section id="reviews" class="reviews">
-  <h2>آراء عملائنا</h2>
-  <div class="review-container">
-    <div class="review-card">
-      <p class="review-text">"لقد جربت خدمات هذا الموقع وكانت تجربة ممتازة. التصميم احترافي والدعم سريع."</p>
-      <h3>- أحمد علي</h3>
-    </div>
+  </section>
 
-    <div class="review-card">
-      <p class="review-text">"موقع مذهل! ساعدوني في إنشاء موقع شركتي خلال أيام قليلة وبجودة عالية."</p>
-      <h3>- سارة محمد</h3>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">"خدمة رائعة وسرعة في التنفيذ، أنصح بالتعامل معهم بشدة."</p>
-      <h3>- خالد يوسف</h3>
-    </div>
-  </div>
-</section>
   <section id="contact">
     <h2>تواصل معنا</h2>
     <p>📧 البريد الإلكتروني: <strong>MubarkCalm73@gmail.com</strong></p>
