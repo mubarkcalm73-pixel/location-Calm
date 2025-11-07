@@ -1,143 +1,40 @@
-body {
-  font-family: 'Cairo', sans-serif;
-  margin: 0;
-  color: white;
-  transition: background 0.3s, color 0.3s;
-  background-image: url('images/SAVE_20251106_023017.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  z-index: 0;
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>صفحة من نحن | MC Designer</title>
+    <style>
+        .logo-container {
+            /* ضبط مساحة الحاوية */
+            width: 200px; /* يمكنك تغيير العرض حسب ما تراه مناسباً */
+            height: 200px;
+            margin: 30px auto; /* توسيط الشعار وإعطائه مسافة من الأعلى والأسفل */
+        }
 
-/* 🌹 الطبقة الحمراء الشفافة فوق الخلفية */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 90, 90, 0.35); /* ← هنا قوة اللون، خفيفة واحترافية */
-  z-index: -1; /* حتى لا تغطي النصوص */
-}
-#blog {
-  text-align: center;
-  padding: 60px 20px;
-}
+        .profile-logo {
+            /* تنسيق الصورة نفسها */
+            width: 100%; 
+            height: 100%;
+            display: block; /* لضمان التجاوب */
+            object-fit: cover; 
+            border-radius: 50%; /* لجعلها دائرية (كما كانت صورتك الشخصية) */
+            box-shadow: 0 0 25px 5px rgba(255, 0, 0, 0.9); /* توهج أحمر قوي */
+            border: 4px solid #ff0000; /* إطار أحمر حول الشعار */
+        }
+    </style>
+</head>
+<body>
+    ```
 
-#blog h2 {
-  color: #ff5a5a;
-  font-size: 26px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
+### 2. وضع كود HTML للشعار في `<body>`
 
-#blog p {
-  color: #eee;
-  max-width: 650px;
-  margin: auto;
-  margin-bottom: 40px;
-  line-height: 1.8;
-}
+ثم، ضع كود HTML التالي في المكان المحدد بملف `index.html` حيث تريد ظهور الشعار (عادةً في قسم "من نحن"):
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
+```html
+<section id="about-us">
+    <div class="logo-container">
+        <img src="images/mc-red-logo.png" alt="MC Website Designer Logo" class="profile-logo">
+    </div>
+    
+    </section>
 
-.blog-card {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
-  overflow: hidden;
-  padding-bottom: 20px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  backdrop-filter: blur(6px);
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.blog-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.blog-card h3 {
-  color: #ff5a5a;
-  font-size: 18px;
-  margin: 15px 0 10px;
-}
-
-.blog-card p {
-  color: #ddd;
-  font-size: 15px;
-  line-height: 1.6;
-  padding: 0 15px;
-}
-
-.view-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: #ff5a5a;
-  color: white;
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: background 0.3s;
-}
-
-.view-btn:hover {
-  background: #ff7676;
-}
-.reviews {
-  padding: 60px 20px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.reviews h2 {
-  color: #ff4d4d;
-  margin-bottom: 30px;
-  font-size: 2em;
-}
-
-.review-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.review-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  padding: 20px;
-  border-radius: 15px;
-  width: 300px;
-  transition: transform 0.3s;
-}
-
-.review-card:hover {
-  transform: scale(1.05);
-}
-
-.review-text {
-  color: #fff;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.review-card h3 {
-  color: #ff6666;
-  font-weight: 600;
-}
